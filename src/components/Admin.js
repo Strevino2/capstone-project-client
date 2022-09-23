@@ -1,8 +1,8 @@
 import * as React from "react";
 import Search from "./Search"
-import ConfirmModal from "./ConfirmModal"
+// import ConfirmModal from "./ConfirmModal"
 import { useState, useEffect } from "react";
-import Results from "./Results"
+// import Results from "./Results"
 
 export default function Admin() {
   const [menu, setMenu] = useState([]);

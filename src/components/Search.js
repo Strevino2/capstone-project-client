@@ -24,7 +24,24 @@ export default function Search(props) {
 
   useEffect(() => {
     console.log("INPUT", input);
-    inputSearch();
+    function inputSearch() {
+      const data = props.menu;
+      const results = [];
+  
+      console.log(data, "DATA");
+      for (let i = 0; i < data.length; i++) {
+        const menuName = data[i].menu_name.toLowerCase().includes(input);
+  
+        if (menuName) {
+          console.log("MENU NAME MATCHES", menuName);
+          results.push(data[i]);
+        }
+        console.log("RESULTS ", results);
+        setFilteredList(results);
+      }
+    };
+    inputSearch()
+    //eslint-disable-next-line react-hooks/exhaustive-deps
   }, [input]);
 
   useEffect(() => {
@@ -35,22 +52,22 @@ export default function Search(props) {
     console.log("CONFIRMED ITEM", itemConfirmed);
   }, [itemConfirmed]);
 
-  async function inputSearch(e) {
-    const data = props.menu;
-    const results = [];
+  // async function inputSearch(e) {
+  //   const data = props.menu;
+  //   const results = [];
 
-    console.log(data, "DATA");
-    for (let i = 0; i < data.length; i++) {
-      const menuName = data[i].menu_name.toLowerCase().includes(input);
+  //   console.log(data, "DATA");
+  //   for (let i = 0; i < data.length; i++) {
+  //     const menuName = data[i].menu_name.toLowerCase().includes(input);
 
-      if (menuName) {
-        console.log("MENU NAME MATCHES", menuName);
-        results.push(data[i]);
-      }
-      console.log("RESULTS ", results);
-      setFilteredList(results);
-    }
-  }
+  //     if (menuName) {
+  //       console.log("MENU NAME MATCHES", menuName);
+  //       results.push(data[i]);
+  //     }
+  //     console.log("RESULTS ", results);
+  //     setFilteredList(results);
+  //   }
+  // }
 
   return (
     <div>
