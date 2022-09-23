@@ -19,8 +19,8 @@ export default function Search(props) {
   };
 
   const handleSubmit = () => {
-    console.log("SUBMITTED")
-  }
+    console.log("SUBMITTED");
+  };
 
   useEffect(() => {
     console.log("INPUT", input);
@@ -41,15 +41,7 @@ export default function Search(props) {
 
     console.log(data, "DATA");
     for (let i = 0; i < data.length; i++) {
-      //   console.log("DATA LOWER ", data[i]);""
-      //   if (data[i].title === null) {
-      //     console.log("FIRST ", data[i].url);
-      //     data[i].url = "";
-      //     console.log("SECOND ", data[i].url);
-      //   }
-      // console.log(data[i].menu_name, "DATA MENU NAME");
       const menuName = data[i].menu_name.toLowerCase().includes(input);
-      // console.log(menuName, "menuNAME");
 
       if (menuName) {
         console.log("MENU NAME MATCHES", menuName);
@@ -81,9 +73,7 @@ export default function Search(props) {
           })
         }
         type="text"
-      >
-        {/* {itemConfirmed.menu_name} */}
-      </input>{" "}
+      ></input>{" "}
       <br></br>
       <label forhtml="price">Price</label>
       <input value={itemConfirmed.menu_price} type="text"></input>

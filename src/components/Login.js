@@ -23,12 +23,12 @@ export default function Login() {
         console.log(res);
         res.json();
       })
-      .then((data) => console.log("DATA", data));
+      .then((msg) => console.log("DATA", msg));
   };
 
   const handleChange = (e) => {
-    console.log("E", e);
-    console.log("V", e.target.value);
+    // console.log("E", e);
+    // console.log("V", e.target.value);
     // setLogin(e.target.value);
     setLogin((prevState) => {
       let copy = { ...prevState };
@@ -38,9 +38,9 @@ export default function Login() {
     });
   };
 
-  useEffect(() => {
-    console.log("STATE", login);
-  }, [login]);
+  // useEffect(() => {
+  //   console.log("STATE", login);
+  // }, [login]);
 
   //   useEffect(() => {
   //     console.log("PASSWORD", password);
