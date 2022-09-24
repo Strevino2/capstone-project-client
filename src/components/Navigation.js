@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-// import { companyLogo } from '../images/
 
 const Navigation = () => {
   const theme = createTheme({
@@ -51,28 +50,31 @@ const Navigation = () => {
                 aria-haspopup="true"
               />
             </IconButton>
-            {/* <a href="#" class="fa fa-facebook"></a> */}
-            <img
-              src="/facebook-24 (1).png"
-              alt="Facebook logo"
-              style={{ width: 20, height: 20, paddingLeft: 10 }}
-            />
+            <a href="https://www.facebook.com/HillCountryCupboard">
+              <img
+                src="/facebook-24 (1).png"
+                alt="Facebook logo"
+                style={{ width: 20, height: 20, paddingLeft: 10 }}
+              />
+            </a>
             <Typography
               className="logo"
               color="white"
               variant="h6"
               style={{ flexGrow: "1" }}
             >
-              <img
-                src="/297031234_5933796059978630_4496011331339506165_n.jpg"
-                alt="Hill Country Cupboard logo"
-                style={{
-                  width: 60,
-                  height: 60,
-                  paddingTop: 6,
-                  borderRadius: "50%",
-                }}
-              />
+              <Link to="/">
+                <img
+                  src="/297031234_5933796059978630_4496011331339506165_n.jpg"
+                  alt="Hill Country Cupboard logo"
+                  style={{
+                    width: 60,
+                    height: 60,
+                    paddingTop: 6,
+                    borderRadius: "50%",
+                  }}
+                />
+              </Link>
             </Typography>
             {/* <ul className="nav-list">
               <li className="nav-list-item">
@@ -106,7 +108,15 @@ const Navigation = () => {
         <MenuItem onClick={handleClose}>
           <Link to="/">Home</Link>
         </MenuItem>
-        <MenuItem onClick={handleClose}>Facebook</MenuItem>
+        <MenuItem onClick={handleClose}>
+          <Link to="/admin">Admin</Link>
+        </MenuItem>
+        <MenuItem onClick={handleClose}>
+          <Link to="/login">Login</Link>
+        </MenuItem>
+        <MenuItem onClick={handleClose}>
+          <a href="https://www.facebook.com/HillCountryCupboard">Facebook</a>
+        </MenuItem>
       </Menu>
     </div>
   );

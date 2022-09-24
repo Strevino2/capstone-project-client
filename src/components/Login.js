@@ -5,8 +5,6 @@ import TextField from "@mui/joy/TextField";
 import Button from "@mui/joy/Button";
 
 export default function Login() {
-  //   const [userName, setUserName] = useState("");
-  //   const [password, setPassword] = useState("");
   const [login, setLogin] = useState({ username: "", password: "" });
 
   const handleSubmit = () => {
@@ -52,12 +50,16 @@ export default function Login() {
         <TextField
           onChange={handleChange}
           type="text"
-          sx={{ border: "0" }}
+          id="description-basic"
+          variant="standard"
+          sx={{ border: "1", borderBottom: "1px solid lightgrey;" }}
           placeholder="Username"
         />
         <TextField
-          sx={{ border: "0" }}
+          sx={{ border: "1", borderBottom: "1px solid lightgrey;" }}
           type="password"
+          variant="standard"
+          id="description-basic"
           placeholder="Password"
           onChange={(e) =>
             setLogin((prevState) => {
@@ -68,6 +70,7 @@ export default function Login() {
             })
           }
         />
+        <br></br>
         <Button
           sx={{ width: "100%", color: "black", background: "lightgrey" }}
           variant="solid"

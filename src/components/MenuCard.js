@@ -8,7 +8,6 @@ import CardContent from "@mui/material/CardContent";
 
 export default function MenuCard(props) {
   const [menu, setMenu] = useState([]);
-  // const [type, setType] = useState([]);
 
   useEffect(() => {
     const fetchMenuData = async () => {
@@ -58,7 +57,6 @@ export default function MenuCard(props) {
             </Typography>
           </CardContent>
           <CardActions>
-            {/* <Button size="small">Learn More</Button> */}
           </CardActions>
         </Card>
       </ul>
