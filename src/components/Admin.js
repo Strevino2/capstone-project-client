@@ -2,6 +2,7 @@ import * as React from "react";
 import Search from "./Search"
 // import ConfirmModal from "./ConfirmModal"
 import { useState, useEffect } from "react";
+import { CreateAddForm } from "./CreateAddForm";
 // import Results from "./Results"
 
 export default function Admin() {
@@ -47,7 +48,7 @@ export default function Admin() {
   return (
     <div className="admin">
       <Search menu={menu}/>
-      {/* <ConfirmModal /> */}
+      {<CreateAddForm menu={menu} />}
       {/* <Results /> */}
     </div>
   );
