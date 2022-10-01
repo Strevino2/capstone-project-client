@@ -1,28 +1,48 @@
 import * as React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Box from "@mui/joy/Box";
 import TextField from "@mui/joy/TextField";
 import Button from "@mui/joy/Button";
+import cookie from "cookie";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   const [login, setLogin] = useState({ username: "", password: "" });
-
+  let navigate = useNavigate();
   const handleSubmit = () => {
     console.log("CLICKED");
     fetch("https://capstone-project-gilt-three.vercel.app/login", {
       method: "POST",
       body: JSON.stringify(login),
       headers: {
-        "Content-Type": "application/json",
-        Authorization: "Bearer Token",
+        "Content-Type": "application/json; charset=UTF-8",
+        // Authorization: "Bearer Token",
       },
     })
-      .then((res) => {
-        console.log(res);
-        res.json();
-      })
-      .then((msg) => console.log("DATA", msg));
+      .then((res) => res.json())
+      .then((response) => {
+        console.log("TYPE OF", typeof(response))
+        console.log("LOGIN RESPONSE", response);
+        console.log("TOKEN RESPONSE", response.token);
+        console.log("RESPONSE MSG", response.msg)
+        if(response.msg === "Login successful") {
+        document.cookie = cookie.serialize(
+          "loggedIn",
+          "true",
+          "jwtToken",
+          response.token,
+          { maxAge: 7200 }
+        )}
+          navigate("/admin")
+      });
   };
+
+  let cookies = cookie.parse(document.cookie);
+
+  useEffect(() => {
+    console.log("LOGIN PAGE")
+    cookies["loggedIn"] && navigate("/admin");
+  });
 
   const handleChange = (e) => {
     // console.log("E", e);
@@ -36,21 +56,12 @@ export default function Login() {
     });
   };
 
-  // useEffect(() => {
-  //   console.log("STATE", login);
-  // }, [login]);
-
-  //   useEffect(() => {
-  //     console.log("PASSWORD", password);
-  //   }, [password]);
-
   return (
     <div className="login">
       <Box sx={{ width: "40%" }}>
         <TextField
           onChange={handleChange}
           type="text"
-          id="description-basic"
           variant="standard"
           sx={{ border: "1", borderBottom: "1px solid lightgrey;" }}
           placeholder="Username"
@@ -59,7 +70,6 @@ export default function Login() {
           sx={{ border: "1", borderBottom: "1px solid lightgrey;" }}
           type="password"
           variant="standard"
-          id="description-basic"
           placeholder="Password"
           onChange={(e) =>
             setLogin((prevState) => {
@@ -84,38 +94,6 @@ export default function Login() {
           Login
         </Button>
       </Box>
-      {/* <form>
-        <label forhtml="fname">Username</label>
-        <input
-          onChange={handleChange}
-          type="text"
-          id="fname"
-          name="fname"
-        ></input>
-        <label forhtml="lname">Password:</label>
-        <input
-          onChange={(e) =>
-            setLogin((prevState) => {
-              let copy = { ...prevState };
-              copy.password = e.target.value;
-              setLogin(copy);
-              return copy;
-            })
-          }
-          type="text"
-          id="lname"
-          name="lname"
-        ></input>
-        <br></br>
-        <input
-          type="submit"
-          value="Submit"
-          onClick={(e) => {
-            e.preventDefault();
-            handleSubmit();
-          }}
-        ></input>
-      </form> */}
     </div>
   );
 }

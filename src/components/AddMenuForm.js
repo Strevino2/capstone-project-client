@@ -3,13 +3,21 @@ import Box from "@mui/joy/Box";
 import TextField from "@mui/joy/TextField";
 import Button from "@mui/joy/Button";
 
-export const CreateAddForm = () => {
+export const AddMenuForm = () => {
   const initialFormState = {
     menu_type: "",
     menu_name: "",
     menu_price: "",
     menu_description: "",
   };
+
+  const handleClear = (e) => {
+    dispatch({
+      field: e.target.name,
+      payload: "",
+      type: "HANDLE_CLEAR_TEXT",
+    });
+  }
 
   const createUserReducer = (state, action) => {
     switch (action.type) {
@@ -18,10 +26,16 @@ export const CreateAddForm = () => {
           ...state,
           [action.field]: action.payload,
         };
+      case "HANDLE_CLEAR_TEXT":
+        return {
+          ...state,
+          [action.field]: action.payload,
+        };
       default:
         return state;
     }
   };
+
   const [state, dispatch] = useReducer(createUserReducer, initialFormState);
 
   const handleChange = (e) => {
@@ -57,6 +71,7 @@ export const CreateAddForm = () => {
             type="text"
             name="menu_type"
             id="edit-form"
+            // value={initialFormState.menu_type}
             variant="standard"
             sx={{ border: "1", borderBottom: "1px solid lightgrey;" }}
             placeholder="Menu type"
@@ -73,6 +88,7 @@ export const CreateAddForm = () => {
             type="text"
             name="menu_name"
             id="edit-form"
+            value={initialFormState.menu_name}
             variant="standard"
             sx={{ border: "1", borderBottom: "1px solid lightgrey;" }}
             placeholder="Menu name"
@@ -88,6 +104,7 @@ export const CreateAddForm = () => {
           <TextField
             type="text"
             name="menu_price"
+            value={initialFormState.menu_price}
             id="edit-form"
             variant="standard"
             sx={{ border: "1", borderBottom: "1px solid lightgrey;" }}
@@ -104,6 +121,7 @@ export const CreateAddForm = () => {
           <TextField
             type="text"
             name="menu_description"
+            value={initialFormState.menu_description}
             id="edit-form"
             variant="standard"
             sx={{ border: "1", borderBottom: "1px solid lightgrey;" }}
@@ -124,6 +142,7 @@ export const CreateAddForm = () => {
         <Button
           sx={{ width: "100%", color: "black", background: "lightgrey" }}
           variant="solid"
+          onClick={handleClear}
         >
           Clear
         </Button>

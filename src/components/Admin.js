@@ -1,8 +1,10 @@
 import * as React from "react";
-import Search from "./Search"
+import EditMenuForm from "./EditMenuForm";
 // import ConfirmModal from "./ConfirmModal"
 import { useState, useEffect } from "react";
-import { CreateAddForm } from "./CreateAddForm";
+import { AddMenuForm } from "./AddMenuForm";
+import { UpdateHoursForm } from "./UpdateHoursForm";
+import { DeleteMenuForm } from "./DeleteMenuForm";
 // import Results from "./Results"
 
 export default function Admin() {
@@ -23,7 +25,7 @@ export default function Admin() {
     fetchMenuData();
   }, []);
 
-    useEffect(() => {
+  useEffect(() => {
     console.log("MENU", menu);
   }, [menu]);
 
@@ -41,15 +43,16 @@ export default function Admin() {
     fetchHoursData();
   }, []);
 
-    useEffect(() => {
+  useEffect(() => {
     console.log("HOURS", hours);
   }, [hours]);
 
   return (
     <div className="admin">
-      <Search menu={menu}/>
-      {<CreateAddForm menu={menu} />}
-      {/* <Results /> */}
+      <EditMenuForm menu={menu} />
+      <AddMenuForm menu={menu} />
+      <DeleteMenuForm menu={menu} />
+      {/* <UpdateHoursForm hours={hours} /> */}
     </div>
   );
 }

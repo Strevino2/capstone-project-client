@@ -24,13 +24,13 @@ export default function Home() {
     return (
       <div className="App">
         <ul>
-          {hours.map((x, idx) => (
+          {/* {hours.map((x, idx) => (
             <li key={idx}>
               <h4>
                 {x.dining_room} {x.day} {x.hours}
               </h4>
             </li>
-          ))}
+          ))} */}
         </ul>
       </div>
     );
