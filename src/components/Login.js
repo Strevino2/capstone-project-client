@@ -45,9 +45,6 @@ export default function Login() {
   });
 
   const handleChange = (e) => {
-    // console.log("E", e);
-    // console.log("V", e.target.value);
-    // setLogin(e.target.value);
     setLogin((prevState) => {
       let copy = { ...prevState };
       copy.username = e.target.value;

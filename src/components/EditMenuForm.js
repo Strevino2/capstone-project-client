@@ -1,8 +1,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import Box from "@mui/joy/Box";
-import TextField from "@mui/joy/TextField";
-import Button from "@mui/joy/Button";
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
 import Autocomplete from "@mui/material/Autocomplete";
 
 export default function EditMenuForm(props) {
@@ -26,7 +26,7 @@ export default function EditMenuForm(props) {
 
   const handleSubmit = () => {
     fetch(
-      `https://capstone-project-gilt-three.vercel.app/mnu/${itemConfirmed.id}`,
+      `https://capstone-project-gilt-three.vercel.app/menu/${itemConfirmed.id}`,
       {
         method: "PUT",
         body: JSON.stringify(itemConfirmed),
@@ -36,7 +36,6 @@ export default function EditMenuForm(props) {
       }
     )
       .then((res) => res.json())
-      // .then((data) => data)
       .then(() => setInput(""))
       .catch((e) => {
         setError("Error editing menu");
@@ -76,6 +75,17 @@ export default function EditMenuForm(props) {
       setFilteredList(results);
     }
   }
+
+  const handleChangeState = (_, newValue) => {
+    console.log("NEW VALUE", newValue);
+    setItemConfirmed({
+      id: newValue.id,
+      menu_type: newValue.menu_type,
+      menu_name: newValue.menu_name,
+      menu_price: newValue.menu_price,
+      menu_description: newValue.menu_description,
+    });
+  };
 
   const top100Films = [
     { label: "The Shawshank Redemption", year: 1994 },
@@ -205,31 +215,23 @@ export default function EditMenuForm(props) {
     { label: "Monty Python and the Holy Grail", year: 1975 },
   ];
 
+  console.log("MENU PROPS", props.menu);
+  console.log("PROPS", props);
+
   return (
     <div className="admin">
       <form className="admin-form">
         <h2>Use this form to update a menu item</h2>
-        {/* <Autocomplete
+        <Autocomplete
           disablePortal
           id="combo-box-demo"
-          options={top100Films}
+          options={props.menu}
+          getOptionLabel={(option) => option.menu_name}
           sx={{ width: 300 }}
-          renderInput={(params) => <TextField {...params} label="Movie" />}
-        /> */}
-        <label forhtml="name">
-          Search for item here:
-          <Box sx={{ width: "100%" }}>
-            <TextField
-              type="text"
-              id="edit-form"
-              value={input}
-              variant="standard"
-              sx={{ border: "1", borderBottom: "1px solid lightgrey;" }}
-              placeholder="Search"
-              onChange={handleChange}
-            />
-          </Box>
-        </label>{" "}
+          value={itemConfirmed.menu_name.title}
+          onChange={(_, newValue) => handleChangeState(_, newValue)}
+          renderInput={(params) => <TextField {...params} label="Menu" />}
+        />
         <br></br>
         <div className="edit-search">
           {filteredList && (

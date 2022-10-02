@@ -135,7 +135,7 @@ body {
 
 #navbar a {
   float: left;
-  color: black;
+  color: #282828;
   text-align: center;
   padding-left: 10px;
   padding-right: 10px;
@@ -168,10 +168,6 @@ body {
 
 .filtered-list {
   position: absolute;
-  /* top: 310px; */
-  /* border-right: 2px solid black;
-  border-bottom: 2px solid black;
-  border-left: 2px solid black; */
   background-color: lightgray;
   list-style: none;
   width: 300px;
@@ -184,16 +180,109 @@ body {
   z-index: 2;
 }
 
-@media screen and (max-width: 580px) {
-  /* #navbar {
-    padding: 20px 10px !important;
+.nav-list {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+  width: 100%;
+  color: white;
+  padding-left: 0px !important;
+}
+
+.bottom-link {
+  color: white;
+  text-decoration: none;
+}
+
+.top-link {
+  color: white;
+  text-decoration: none;
+}
+
+.bottom-navbar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.nav-list-item {
+  width: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.address-bar {
+  height: 80px;
+  background-color: #282828;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  gap: 5px;
+}
+
+.about-bar {
+  height: 400px;
+  background-color: #282828;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  gap: 5px;
+}
+
+.home {
+  background-color: #282828;
+}
+
+.map-h2 {
+  text-transform: uppercase;
+  font-size: 1rem;
+  padding: 20px;
+  padding-left: 10px;
+  text-align: center;
+}
+
+.google-map {
+  width: 100%;
+  height: 60vh;
+}
+
+.pin {
+  display: flex;
+  align-items: center;
+  width: 180px;
+  color: var(--main-blue);
+}
+
+.pin-icon {
+  font-size: 4rem;
+}
+
+.pin-text {
+  font-size: 1.3em;
+}
+
+@media screen and (min-width: 799px) {
+  .google-map {
+    height: 80vh;
   }
-  #navbar a {
-    float: none;
-    display: block;
-    text-align: left;
+
+  .map-h2 {
+    font-size: 1.3rem;
+    font-weight: 400;
   }
-  #navbar-right {
-    float: none;
-  } */
+
+  .pin {
+    width: 15vw;
+  }
+
+  .pin-icon {
+    font-size: 10vw;
+  }
 }

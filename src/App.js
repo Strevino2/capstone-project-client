@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
-import Navigation from './components/Navigation'
 import CustomNavigation from './components/CustomNavigation'
+import BottomNavigation from './components/BottomNavigation'
 import "./App.css";
 import Router from "./Router";
 
@@ -9,9 +9,9 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-      <Navigation />
-      {/* <CustomNavigation /> */}
+      <CustomNavigation />
         <Router />
+        <BottomNavigation />
       </BrowserRouter>
     </div>
   );

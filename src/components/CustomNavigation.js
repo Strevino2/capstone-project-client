@@ -1,27 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { AppBar, Toolbar, IconButton, Typography } from "@mui/material";
+import {
+  AppBar,
+  Toolbar,
+  IconButton,
+  Typography,
+  MenuList,
+} from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 const CustomNavigation = () => {
-  // const theme = createTheme({
-  //   status: {
-  //     danger: "#e53e3e",
-  //   },
-  //   palette: {
-  //     primary: {
-  //       main: "#282828",
-  //       darker: "#053e85",
-  //     },
-  //     neutral: {
-  //       main: "#64748B",
-  //       contrastText: "#fff",
-  //     },
-  //   },
-  // });
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event, idx) => {
@@ -96,21 +87,41 @@ const CustomNavigation = () => {
           "aria-labelledby": "basic-button",
         }}
       >
-        <MenuItem onClick={handleClose}>
-          <Link to="/menu">Menu</Link>
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <Link to="/">Home</Link>
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <Link to="/admin">Admin</Link>
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <Link to="/login">Login</Link>
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <a href="https://www.facebook.com/HillCountryCupboard">Facebook</a>
-        </MenuItem>
+        <MenuList sx={{ backgroundColor: "#282828", paddingTop: "0px", width: "100%" }}>
+          <MenuItem onClick={handleClose}>
+            <Link className="top-link" to="/menu">
+              Menu
+            </Link>
+          </MenuItem>
+          <MenuItem onClick={handleClose}>
+            <Link className="top-link" to="/">
+              Home
+            </Link>
+          </MenuItem>
+          <MenuItem onClick={handleClose}>
+            <Link className="top-link" to="/admin">
+              Admin
+            </Link>
+          </MenuItem>
+          <MenuItem onClick={handleClose}>
+            <Link className="top-link" to="/login">
+              Login
+            </Link>
+          </MenuItem>
+          <MenuItem onClick={handleClose}>
+            <Link className="top-link" to="/login">
+              Order Online
+            </Link>
+          </MenuItem>
+          <MenuItem onClick={handleClose}>
+            <a
+              className="top-link"
+              href="https://www.facebook.com/HillCountryCupboard"
+            >
+              Facebook
+            </a>
+          </MenuItem>
+        </MenuList>
       </Menu>
     </div>
   );

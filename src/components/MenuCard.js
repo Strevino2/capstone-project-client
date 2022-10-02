@@ -31,33 +31,29 @@ export default function MenuCard(props) {
           <p>{menu.menu_description}</p>
           <CardContent>
             {" "}
-            <Typography className="menu-ul">
-              <Typography>
-                <Typography
-                  sx={{ fontSize: 14 }}
-                  color="text.secondary"
-                  gutterBottom
-                >
-                  {menu
-                    .filter((x) => {
-                      return x.menu_type === props.menuType;
-                    })
-                    .map((x, idx) => (
-                      <li className="menu-li" key={idx}>
-                        <span className="menu-span">
-                          {x.menu_name}
-                          {x.menu_price}
-                        </span>
-                        <p>{x.menu_description}</p>
-                      </li>
-                    ))}
-                </Typography>
-                <Typography></Typography>
+            <Typography component={"div"} className="menu-ul">
+              <Typography
+                sx={{ fontSize: 14 }}
+                color="text.secondary"
+                gutterBottom
+                component={"div"}
+              >
+                {menu
+                  .filter((x) => {
+                    return x.menu_type === props.menuType;
+                  })
+                  .map((x, idx) => (
+                    <li className="menu-li" key={idx}>
+                      <span className="menu-span">
+                        {x.menu_name}
+                        {x.menu_price}
+                      </span>
+                      <p>{x.menu_description}</p>
+                    </li>
+                  ))}
               </Typography>
             </Typography>
           </CardContent>
-          <CardActions>
-          </CardActions>
         </Card>
       </ul>
     </>
