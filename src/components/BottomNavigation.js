@@ -1,5 +1,5 @@
 import React from "react";
-import { AppBar, Toolbar, Typography } from "@mui/material";
+import { AppBar, Toolbar } from "@mui/material";
 import { Link } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
@@ -48,24 +48,6 @@ const BottomNavigation = () => {
           </Toolbar>
         </AppBar>
       </ThemeProvider>
-      {/* <MenuItem onClick={handleClose}>
-          <Link to="/menu">Menu</Link>
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <Link to="/">Home</Link>
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <Link to="/admin">Admin</Link>
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <Link to="/login">Login</Link>
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <a href="https://www.facebook.com/HillCountryCupboard">Facebook</a>
-        </MenuItem> */}
-      {/* <MenuItem onClick={handleClose}>
-          <a href="">Order Online</a>
-        </MenuItem> */}
     </div>
   );
 };

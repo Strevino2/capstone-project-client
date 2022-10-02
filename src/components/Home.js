@@ -1,7 +1,6 @@
 import * as React from "react";
 import { useState, useEffect } from "react";
 import RoomIcon from "@mui/icons-material/Room";
-// import { useTheme } from "@mui/material/styles";
 import SimpleMap from "./Map";
 
 export default function Home() {

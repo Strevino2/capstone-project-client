@@ -1,16 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import {
-  AppBar,
-  Toolbar,
   IconButton,
-  Typography,
   MenuList,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 const CustomNavigation = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);

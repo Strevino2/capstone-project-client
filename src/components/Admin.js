@@ -1,11 +1,8 @@
 import * as React from "react";
 import EditMenuForm from "./EditMenuForm";
-// import ConfirmModal from "./ConfirmModal"
 import { useState, useEffect } from "react";
 import { AddMenuForm } from "./AddMenuForm";
-import { UpdateHoursForm } from "./UpdateHoursForm";
 import { DeleteMenuForm } from "./DeleteMenuForm";
-// import Results from "./Results"
 
 export default function Admin() {
   const [menu, setMenu] = useState([]);
@@ -52,7 +49,6 @@ export default function Admin() {
       <EditMenuForm menu={menu} />
       <AddMenuForm menu={menu} />
       <DeleteMenuForm menu={menu} />
-      {/* <UpdateHoursForm hours={hours} /> */}
     </div>
   );
 }
