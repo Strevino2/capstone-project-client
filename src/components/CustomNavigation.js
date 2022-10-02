@@ -1,16 +1,25 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import {
-  IconButton,
-  MenuList,
-} from "@mui/material";
+import { Link, Navigate } from "react-router-dom";
+import { IconButton, MenuList } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 
 const CustomNavigation = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const [redirect, setRedirect] = React.useState(null);
+
+  React.useEffect(() => {
+    setRedirect(null);
+  });
+
+  const handleRedirect = (link) => {
+    setRedirect(link);
+    handleClose();
+  };
+
   const open = Boolean(anchorEl);
+
   const handleClick = (event, idx) => {
     console.log(idx);
     setAnchorEl(event.currentTarget);
@@ -35,13 +44,14 @@ const CustomNavigation = () => {
   }
   return (
     <div>
+      {redirect && <Navigate to={redirect} />}
       <div id="navbar">
         <Link to="/">
           <img
-            src="/297031234_5933796059978630_4496011331339506165_n.jpg"
+            src="/Adobe_Express_20221001_2213090_1.png"
             alt="Hill Country Cupboard logo"
             style={{
-              width: 60,
+              width: 160,
               height: 60,
               paddingTop: 6,
               borderRadius: "50%",
@@ -83,31 +93,33 @@ const CustomNavigation = () => {
           "aria-labelledby": "basic-button",
         }}
       >
-        <MenuList sx={{ backgroundColor: "#282828", paddingTop: "0px", width: "100%" }}>
-          <MenuItem onClick={handleClose}>
-            <Link className="top-link" to="/menu">
-              Menu
-            </Link>
+        <MenuList
+          sx={{ backgroundColor: "#282828", paddingTop: "0px", width: "100%" }}
+        >
+          <MenuItem onClick={() => handleRedirect("/menu")}>
+            {/* <Link className="top-link" to="/menu"> */}
+            Menu
+            {/* </Link> */}
           </MenuItem>
-          <MenuItem onClick={handleClose}>
-            <Link className="top-link" to="/">
-              Home
-            </Link>
+          <MenuItem onClick={() => handleRedirect("/")}>
+            {/* <Link className="top-link" to="/"> */}
+            Home
+            {/* </Link> */}
           </MenuItem>
-          <MenuItem onClick={handleClose}>
-            <Link className="top-link" to="/admin">
-              Admin
-            </Link>
+          <MenuItem onClick={() => handleRedirect("/admin")}>
+            {/* <Link className="top-link" to="/admin"> */}
+            Admin
+            {/* </Link> */}
           </MenuItem>
-          <MenuItem onClick={handleClose}>
-            <Link className="top-link" to="/login">
-              Login
-            </Link>
+          <MenuItem onClick={() => handleRedirect("/login")}>
+            {/* <Link className="top-link" to="/login"> */}
+            Login
+            {/* </Link> */}
           </MenuItem>
-          <MenuItem onClick={handleClose}>
-            <Link className="top-link" to="/login">
-              Order Online
-            </Link>
+          <MenuItem onClick={() => handleRedirect("/menu")}>
+            {/* <Link className="top-link" to="/login"> */}
+            Order Online
+            {/* </Link> */}
           </MenuItem>
           <MenuItem onClick={handleClose}>
             <a
