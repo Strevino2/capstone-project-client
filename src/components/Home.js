@@ -2,7 +2,7 @@ import * as React from "react";
 import { useState, useEffect } from "react";
 import RoomIcon from "@mui/icons-material/Room";
 import SimpleMap from "./Map";
-import Carousel from "./Carousel";
+// import Carousel from "./Carousel";
 
 export default function Home() {
   const [hours, setHours] = useState([]);
@@ -54,7 +54,7 @@ export default function Home() {
         <RoomIcon />
         About Us:
       </div>
-      <Carousel />
+      {/* <Carousel /> */}
       <img
         src="/10483991_809785879046366_5174751131691766854_n.jpg"
         alt="Hill Country Cupboard logo"

@@ -9,6 +9,7 @@ const CustomNavigation = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [redirect, setRedirect] = React.useState(null);
 
+  //eslint-disable-next-line react-hooks/exhaustive-deps
   React.useEffect(() => {
     setRedirect(null);
   });

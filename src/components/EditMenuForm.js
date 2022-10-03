@@ -49,7 +49,6 @@ export default function EditMenuForm(props) {
     setInput("");
   };
   useEffect(() => {
-    console.log("INPUT", input);
     inputSearch();
     //eslint-disable-next-line react-hooks/exhaustive-deps
   }, [input]);
