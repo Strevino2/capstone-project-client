@@ -23,23 +23,29 @@ const BottomNavigation = () => {
   return (
     <div className="bottom-navbar">
       <ThemeProvider theme={theme}>
-        <AppBar sx={{ height: 40 }} position="relative">
-          <Toolbar sx={{ paddingBottom: "10px", display: "flex" }}>
-            <ul className="nav-list">
+        <AppBar className="bottom-app" position="relative">
+          <Toolbar sx={{ display: "flex" }}>
+            <ul className="bottom-nav-list">
               {" "}
-              <a className="nav-list-item" href="https://www.facebook.com/HillCountryCupboard">
+              <a
+                className="bottom-list-item"
+                href="https://www.facebook.com/HillCountryCupboard"
+              >
                 <img
                   src="/facebook-24 (1).png"
                   alt="Facebook logo"
                   style={{ width: 30, height: 20, paddingLeft: 10 }}
                 />
               </a>
-              <li className="nav-list-item">
-                <Link className="bottom-link" to="/menu">
+              <li className="bottom-list-item">
+                <a
+                  className="bottom-link"
+                  href="https://www.toasttab.com/hill-country-cupboard"
+                >
                   Order Online
-                </Link>
+                </a>
               </li>
-              <li className="nav-list-item">
+              <li className="bottom-list-item">
                 <Link className="bottom-link" to="/menu">
                   Menu
                 </Link>

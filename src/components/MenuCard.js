@@ -43,11 +43,11 @@ export default function MenuCard(props) {
                   })
                   .map((x, idx) => (
                     <li className="menu-li" key={idx}>
-                      <span className="menu-span">
-                        {x.menu_name}
-                        {x.menu_price}
-                      </span>
-                      <p>{x.menu_description}</p>
+                      <div className="menu-span">
+                        <p>{x.menu_name}</p>
+                        <p>{x.menu_price}</p>
+                      </div>
+                      <p className="menu-description">{x.menu_description}</p>
                     </li>
                   ))}
               </Typography>

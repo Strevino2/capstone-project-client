@@ -6,6 +6,7 @@ export default function Menu() {
     <div className="menu-container">
       <div className="image-container">
         <h2 className="menu-h2">Our Menu</h2>
+        
         <MenuCard menuType="Appetizers" />
         <MenuCard menuType="Veggies On The Side" />
         <MenuCard menuType="From the Grill" />

@@ -2,7 +2,8 @@ import * as React from "react";
 import { useState, useEffect } from "react";
 import RoomIcon from "@mui/icons-material/Room";
 import SimpleMap from "./Map";
-// import Carousel from "./Carousel";
+import { Link } from "react-router-dom";
+// import HomeCarousel from "./HomeCarousel";
 
 export default function Home() {
   const [hours, setHours] = useState([]);
@@ -32,9 +33,11 @@ export default function Home() {
 
   return (
     <div className="home">
-      <div className="address-bar">
-        <RoomIcon />
-        101 US HWY 281 S, Johnson City, TX 78636
+      <div className="advertisement-bar">
+        <Link to="/menu">
+          Try our World's Best Chicken Fried Steak or our Award Winning Chicken
+          Fried Pork Chops!
+        </Link>
       </div>
       <img
         src="/1101_509503759074581_1484176182_n.jpg"
@@ -46,30 +49,46 @@ export default function Home() {
         101 US HWY 281 S, Johnson City, TX 78636
       </div>
       <img
-        src="/10483991_809785879046366_5174751131691766854_n.jpg"
+        src="/18813285_1572998952725051_6362616169085327159_n-copy.jpg"
         alt="Hill Country Cupboard logo"
-        style={{ width: "100%", height: "100%" }}
+        style={{ width: "100%", height: "500px" }}
       />
-      <div className="about-bar">
-        <RoomIcon />
-        About Us:
-      </div>
-      {/* <Carousel /> */}
+      <div className="about-bar">About us:</div>
       <img
-        src="/10483991_809785879046366_5174751131691766854_n.jpg"
+        src="/27747616_1855981557760121_632735083973153707_o.jpg"
         alt="Hill Country Cupboard logo"
-        style={{ width: "100%", height: "100%" }}
+        style={{ width: "100%", height: "500px" }}
       />
-      <SimpleMap location={location} zoomLevel={17} />
-      <ul>
-        {/* {hours.map((x, idx) => (
+      <div className="bottom-div">
+        <SimpleMap location={location} zoomLevel={17} />
+      </div>
+      <div className="bottom-info-home">
+        <div className="bottom-location">
+          <h2>Location</h2>
+          <p>101 US HWY 281 S</p>
+          <p>Johnson City, TX 78636</p>
+        </div>
+        <div className="bottom-hours">
+          <h2>Hours</h2>
+          <p>MON,TUE,WED,THUR</p>
+          <p>7:00AM - 3:00PM</p>
+          <p>FRI, SAT, SUN</p>
+          <p>7:00AM - 5:00PM</p>
+        </div>
+        <div className="bottom-contact-us">
+          <h2>Contact Us</h2>
+          <p>830-868-4625</p>
+        </div>
+      </div>
+      {/* <ul> */}
+      {/* {hours.map((x, idx) => (
             <li key={idx}>
               <h4>
                 {x.dining_room} {x.day} {x.hours}
               </h4>
             </li>
           ))} */}
-      </ul>
+      {/* </ul> */}
     </div>
   );
 }
