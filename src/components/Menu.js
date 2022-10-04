@@ -7,12 +7,12 @@ export default function Menu() {
       <div className="image-container">
         <h2 className="menu-h2">Our Menu</h2>
         
-        <MenuCard menuType="Appetizers" />
-        <MenuCard menuType="Veggies On The Side" />
-        <MenuCard menuType="From the Grill" />
-        <MenuCard menuType="Hill Country Baskets" />
-        <MenuCard menuType="BreakFast" />
-        <MenuCard menuType="Beverages" />
+        <MenuCard menuType="Appetizers" menuMessage="All our appetizers are hand-breaded" />
+        <MenuCard menuType="Veggies On The Side" menuMessage="All our appetizers are hand-breaded" />
+        <MenuCard menuType="From the Grill" menuMessage="All our appetizers are hand-breaded" />
+        <MenuCard menuType="Hill Country Baskets" menuMessage="All our appetizers are hand-breaded" />
+        <MenuCard menuType="BreakFast" menuMessage="All our appetizers are hand-breaded" />
+        <MenuCard menuType="Beverages" menuMessage="All our appetizers are hand-breaded" />
         {/* <MenuCard menuType="Specials"/> */}
       </div>
     </div>

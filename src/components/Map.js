@@ -2,6 +2,8 @@ import React from "react";
 import GoogleMapReact from "google-map-react";
 import { LocationPin } from "./LocationPin";
 
+// require("dotenv").config();
+
 const Map = ({ location, zoomLevel }) => {
   return (
     <div className="map">

@@ -27,7 +27,7 @@ export default function MenuCard(props) {
       <ul className="menu-card">
         <Card sx={{ minWidth: 240 }}>
           <h3 className="menu-header">{props.menuType}</h3>
-          <p>{menu.menu_description}</p>
+          <p>{props.menuMessage}</p>
           <CardContent>
             {" "}
             <Typography component={"div"} className="menu-ul">

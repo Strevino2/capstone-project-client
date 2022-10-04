@@ -2,6 +2,7 @@ import * as React from "react";
 import { useState, useEffect } from "react";
 import RoomIcon from "@mui/icons-material/Room";
 import SimpleMap from "./Map";
+import PhotoGallery from "./PhotoGallery";
 import { Link } from "react-router-dom";
 // import HomeCarousel from "./HomeCarousel";
 
@@ -53,12 +54,15 @@ export default function Home() {
         alt="Hill Country Cupboard logo"
         style={{ width: "100%", height: "500px" }}
       />
-      <div className="about-bar">About us:</div>
-      <img
+      <div className="home-about-bar">
+        <div className="about-bar">About us:</div>{" "}
+      </div>
+      <PhotoGallery />
+      {/* <img
         src="/27747616_1855981557760121_632735083973153707_o.jpg"
         alt="Hill Country Cupboard logo"
         style={{ width: "100%", height: "500px" }}
-      />
+      /> */}
       <div className="bottom-div">
         <SimpleMap location={location} zoomLevel={17} />
       </div>
@@ -67,6 +71,10 @@ export default function Home() {
           <h2>Location</h2>
           <p>101 US HWY 281 S</p>
           <p>Johnson City, TX 78636</p>
+        </div>{" "}
+        <div className="bottom-contact-us">
+          <h2>Contact Us</h2>
+          <p>830-868-4625</p>
         </div>
         <div className="bottom-hours">
           <h2>Hours</h2>
@@ -74,10 +82,6 @@ export default function Home() {
           <p>7:00AM - 3:00PM</p>
           <p>FRI, SAT, SUN</p>
           <p>7:00AM - 5:00PM</p>
-        </div>
-        <div className="bottom-contact-us">
-          <h2>Contact Us</h2>
-          <p>830-868-4625</p>
         </div>
       </div>
       {/* <ul> */}
