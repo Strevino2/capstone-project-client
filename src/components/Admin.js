@@ -3,6 +3,8 @@ import EditMenuForm from "./EditMenuForm";
 import { useState, useEffect } from "react";
 import { AddMenuForm } from "./AddMenuForm";
 import { DeleteMenuForm } from "./DeleteMenuForm";
+import cookie from "cookie";
+import SnackBar from "./SnackBar";
 
 export default function Admin() {
   const [menu, setMenu] = useState([]);
@@ -24,6 +26,7 @@ export default function Admin() {
 
   useEffect(() => {
     console.log("MENU", menu);
+    cookie.parse(document.cookie);
   }, [menu]);
 
   useEffect(() => {
@@ -45,10 +48,15 @@ export default function Admin() {
   }, [hours]);
 
   return (
-    <div className="admin">
-      <EditMenuForm menu={menu} />
-      <AddMenuForm menu={menu} />
-      <DeleteMenuForm menu={menu} />
+    <div>
+      <div className="admin-snackbar">
+        <SnackBar />
+      </div>
+      <div className="admin">
+        <EditMenuForm menu={menu} />
+        <AddMenuForm menu={menu} />
+        <DeleteMenuForm menu={menu} />
+      </div>
     </div>
   );
 }

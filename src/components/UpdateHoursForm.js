@@ -46,7 +46,6 @@ export const UpdateHoursForm = (props) => {
       body: JSON.stringify(state),
       headers: {
         "Content-Type": "application/json",
-        // "Authorization": "Bearer Token",
       },
     })
       .then((res) => res.json())

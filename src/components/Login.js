@@ -6,11 +6,12 @@ import Button from "@mui/joy/Button";
 import cookie from "cookie";
 import { useNavigate } from "react-router-dom";
 
-export default function Login() {
+export default function Login(props) {
   const [login, setLogin] = useState({ username: "", password: "" });
   const [errorMessage, setErrorMessage] = useState(false);
-
+  
   let navigate = useNavigate();
+  let cookies = cookie.parse(document.cookie);
 
   const handleSubmit = () => {
     try {
@@ -20,7 +21,6 @@ export default function Login() {
         body: JSON.stringify(login),
         headers: {
           "Content-Type": "application/json; charset=UTF-8",
-          // Authorization: "Bearer Token",
         },
       })
         .then((res) => res.json())
@@ -33,6 +33,9 @@ export default function Login() {
             document.cookie = cookie.serialize("loggedIn", "true", {
               maxAge: 7200,
             });
+            document.cookie = cookie.serialize("username", login.username, {
+              maxAge: 7200,
+            });
             setErrorMessage(false);
             navigate("/admin");
           } else {
@@ -43,7 +46,6 @@ export default function Login() {
       console.log(error);
     }
   };
-  let cookies = cookie.parse(document.cookie);
 
   useEffect(() => {
     console.log("LOGIN PAGE");
@@ -100,7 +102,9 @@ export default function Login() {
         >
           Login
         </Button>
-        {errorMessage && <p className="login-error-msg">Wrong username or password</p>}
+        {errorMessage && (
+          <p className="login-error-msg">Wrong username or password</p>
+        )}
       </Box>
     </div>
   );

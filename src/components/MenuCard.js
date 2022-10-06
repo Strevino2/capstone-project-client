@@ -3,7 +3,6 @@ import Typography from "@mui/material/Typography";
 import { useState, useEffect } from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
-// import Button from "@mui/material/Button";
 
 export default function MenuCard(props) {
   const [menu, setMenu] = useState([]);
@@ -25,7 +24,7 @@ export default function MenuCard(props) {
   return (
     <>
       <ul className="menu-card">
-        <Card sx={{ minWidth: 240 }}>
+        <Card className="inner-menu-card">
           <h3 className="menu-header">{props.menuType}</h3>
           <p>{props.menuMessage}</p>
           <CardContent>
@@ -44,7 +43,7 @@ export default function MenuCard(props) {
                   .map((x, idx) => (
                     <li className="menu-li" key={idx}>
                       <div className="menu-span">
-                        <p>{x.menu_name}</p>
+                        <p>{x.menu_name.toUpperCase()}</p>
                         <p>{x.menu_price}</p>
                       </div>
                       <p className="menu-description">{x.menu_description}</p>
