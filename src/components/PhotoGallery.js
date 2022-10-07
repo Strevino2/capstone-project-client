@@ -15,7 +15,7 @@ export default function QuiltedImageList() {
     const homeBarWidth = document.getElementsByClassName("home-about-bar").innerWidth;
   return (
     <ImageList
-      sx={{ width: homeBarWidth, height: 760, paddingTop: 4, backgroundColor: "#282828" }}
+      sx={{ width: homeBarWidth, height: 800, paddingTop: 4, backgroundColor: "#282828" }}
       variant="string"
       cols={4}
       rowHeight={121}

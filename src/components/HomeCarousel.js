@@ -1,35 +1,34 @@
-// import React, { Component } from "react";
-// import ReactDOM from "react-dom";
-// import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-// import { Carousel } from "react-responsive-carousel";
+import React from "react";
+import "bootstrap/dist/css/bootstrap.css";
+import Carousel from "react-bootstrap/Carousel";
 
-// class HomeCarousel extends Component {
-//   render() {
-//     return (
-//       <Carousel>
-//         <div>
-//           <img src="assets/1.jpeg" />
-//           <p className="legend">Legend 1</p>
-//         </div>
-//         <div>
-//           <img src="assets/2.jpeg" />
-//           <p className="legend">Legend 2</p>
-//         </div>
-//         <div>
-//           <img src="assets/3.jpeg" />
-//           <p className="legend">Legend 3</p>
-//         </div>
-//       </Carousel>
-//     );
-//   }
-// }
-
-// ReactDOM.render(<HomeCarousel />, document.querySelector(".demo-carousel"));
-// export default HomeCarousel;
-// Don't forget to include the css in your page
-
-// Using webpack or parcel with a style loader
-// import styles from 'react-responsive-carousel/lib/styles/carousel.min.css';
-
-// Using html tag:
-// <link rel="stylesheet" href="<NODE_MODULES_FOLDER>/react-responsive-carousel/lib/styles/carousel.min.css"/>
+export default function HomeCarousel() {
+  return (
+    <div style={{ display: "block", width: "100%", padding: 30 }}>
+      <Carousel>
+        <Carousel.Item interval={8500}>
+          <img
+            className="d-block w-100"
+            src="https://media.geeksforgeeks.org/wp-content/uploads/20210425122739/2-300x115.png"
+            alt="Hill Country Cupboard bar view"
+          />
+          <Carousel.Caption>
+            <h3>Label for first slide</h3>
+            <p>Sample Text for Image One</p>
+          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item interval={8500}>
+          <img
+            className="d-block w-100"
+            src="https://media.geeksforgeeks.org/wp-content/uploads/20210425122716/1-300x115.png"
+            alt="Hill Country Cupboard building view"
+          />
+          <Carousel.Caption>
+            <h3>Label for second slide</h3>
+            <p>Sample Text for Image Two</p>
+          </Carousel.Caption>
+        </Carousel.Item>
+      </Carousel>
+    </div>
+  );
+}

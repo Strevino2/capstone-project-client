@@ -35,7 +35,8 @@ p {
   margin-top: 0;
   padding-top: 20px;
   font-weight: bolder;
-  font-size: 40px;
+  font-size: 50px;
+  /* color: ; */
 }
 
 .menu-container {
@@ -99,8 +100,8 @@ p {
   display: flex;
   justify-content: center;
   font-weight: bolder;
-  font-size: 2.5em;
-  color: red;
+  font-size: 2em;
+  color: black;
 }
 
 .menu-span {
@@ -108,12 +109,12 @@ p {
   justify-content: space-between;
   font-weight: bolder;
   font-size: 2em;
-  gap:10px;
+  gap: 10px;
   color: black;
 }
 
 .menu-description {
-  font-size: 1em;
+  font-size: 1.2em;
 }
 
 .menu-li {
@@ -162,7 +163,7 @@ body {
   width: 100%;
   top: 0;
   z-index: 99;
-  box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 1.2);
+  box-shadow: 0 4px 24px 2px rgba(0, 0, 0, 1.2);
 }
 
 #navbar a {
@@ -220,6 +221,7 @@ body {
   width: 100%;
   color: white;
   padding-left: 0px !important;
+  margin-bottom: 0em !important;
 }
 
 .bottom-link {
@@ -235,9 +237,11 @@ body {
 .bottom-navbar {
   bottom: 0;
   position: sticky;
-  /* height: 100%; */
+  max-height: 38px !important;
+  min-height: 38px !important;
   width: 100%;
   z-index: 99;
+  box-shadow: 0 24px 24px 24px rgba(0, 0, 0, 1.2);
 }
 
 .bottom-app {
@@ -387,7 +391,7 @@ body {
 }
 
 .bottom-info-home {
-  height: 400px;
+  height: fit-content;
   background-color: #282828;
   color: white;
   text-align: center;
@@ -398,6 +402,8 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-top: 2em;
+  padding-bottom: 1em;
 }
 
 .bottom-info-home h2 {
@@ -411,6 +417,12 @@ body {
   top: 0;
 }
 
+@media screen and (min-width: 600px) {
+  #toolbar {
+    min-height: 40px !important;
+  }
+}
+
 @media screen and (min-width: 900px) {
   #navbar {
     height: 200px;
@@ -421,23 +433,23 @@ body {
   #navbar-right {
     display: none;
   }
-  
+
   .bottom-navbar {
     display: none;
   }
-  
+
   .nav-logo {
     height: 140px;
     width: 260px;
   }
-  
+
   .desktop-nav {
     display: flex;
     justify-content: center;
     flex-direction: column;
     gap: 10px;
   }
-  
+
   .nav-list {
     display: flex;
     justify-content: center;
@@ -446,16 +458,16 @@ body {
     padding: 0px;
     gap: 80px;
   }
-  
+
   .desktop-nav-item {
     color: white;
   }
-  
+
   #navbar a {
     color: white;
     font-size: 26px;
   }
-  
+
   .about-bar {
     height: 800px;
   }
@@ -472,11 +484,11 @@ body {
     font-weight: bolder;
     font-size: 40px;
     padding-bottom: 20px;
-  } 
+  }
   .bottom-hours {
     margin-top: 50px;
   }
-  
+
   .bottom-contact-us {
     margin-bottom: 18px;
   }
@@ -486,19 +498,14 @@ body {
     gap: 4%;
     padding: 10px;
   }
-  
+
   .inner-menu-card {
     width: 45vw;
     max-width: 600px;
-  }  
-  
-
+  }
 }
 @media screen and (min-width: 1000px) {
   .bottom-info-home {
-    gap: 200px;
-  }
-  .nav-list {
     gap: 200px;
   }
 }

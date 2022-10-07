@@ -25,13 +25,13 @@ export default function MenuCard(props) {
     <>
       <ul className="menu-card">
         <Card className="inner-menu-card">
-          <h3 className="menu-header">{props.menuType}</h3>
-          <p>{props.menuMessage}</p>
+          <h3 style={{ textAlign: "center" }} className="menu-header">{props.menuType}</h3>
+          <p style={{display: "flex", justifyContent: "center"}}>{props.menuMessage}</p>
           <CardContent>
             {" "}
             <Typography component={"div"} className="menu-ul">
               <Typography
-                sx={{ fontSize: 14 }}
+                sx={{ fontSize: 8 }}
                 color="text.secondary"
                 gutterBottom
                 component={"div"}
@@ -43,8 +43,8 @@ export default function MenuCard(props) {
                   .map((x, idx) => (
                     <li className="menu-li" key={idx}>
                       <div className="menu-span">
-                        <p>{x.menu_name.toUpperCase()}</p>
-                        <p>{x.menu_price}</p>
+                        <p style={{ color: "maroon" }}>{x.menu_name.toUpperCase()}</p>
+                        <p style={{ color: "maroon" }}>{x.menu_price}</p>
                       </div>
                       <p className="menu-description">{x.menu_description}</p>
                     </li>

@@ -24,7 +24,7 @@ const BottomNavigation = () => {
     <div className="bottom-navbar">
       <ThemeProvider theme={theme}>
         <AppBar className="bottom-app" position="relative">
-          <Toolbar sx={{ display: "flex" }}>
+          <Toolbar id="toolbar" sx={{  display: "flex", alignItems: "center", maxHeight: "40px", minHeight: "40px" }}>
             <ul className="bottom-nav-list">
               {" "}
               <a

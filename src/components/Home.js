@@ -4,7 +4,7 @@ import RoomIcon from "@mui/icons-material/Room";
 import SimpleMap from "./Map";
 import PhotoGallery from "./PhotoGallery";
 import { Link } from "react-router-dom";
-// import HomeCarousel from "./HomeCarousel";
+import HomeCarousel from "./HomeCarousel";
 
 export default function Home() {
   const [hours, setHours] = useState([]);
@@ -57,12 +57,10 @@ export default function Home() {
       <div className="home-about-bar">
         <div className="about-bar">About us:</div>{" "}
       </div>
-      <PhotoGallery />
-      {/* <img
-        src="/27747616_1855981557760121_632735083973153707_o.jpg"
-        alt="Hill Country Cupboard logo"
-        style={{ width: "100%", height: "500px" }}
-      /> */}
+      <div className="photo-gallery">
+        <PhotoGallery />
+      </div>
+      <div className="carousel">{<HomeCarousel />}</div>
       <div className="bottom-div">
         <SimpleMap location={location} zoomLevel={17} />
       </div>

@@ -1,23 +1,18 @@
 import React, { useReducer } from "react";
+import { useState } from "react";
 import Box from "@mui/joy/Box";
 import TextField from "@mui/joy/TextField";
 import Button from "@mui/joy/Button";
 
 export const AddMenuForm = () => {
+  const [success, setSuccess] = useState(false);
+
   const initialFormState = {
     menu_type: "",
     menu_name: "",
     menu_price: "",
     menu_description: "",
   };
-
-  const handleClear = (e) => {
-    dispatch({
-      field: e.target.name,
-      payload: "",
-      type: "HANDLE_CLEAR_TEXT",
-    });
-  }
 
   const createUserReducer = (state, action) => {
     switch (action.type) {
@@ -44,6 +39,7 @@ export const AddMenuForm = () => {
       payload: e.target.value,
       type: "HANDLE_INPUT_TEXT",
     });
+    setSuccess(false);
   };
 
   const handleSubmit = () => {
@@ -55,9 +51,12 @@ export const AddMenuForm = () => {
         "Content-Type": "application/json",
         // "Authorization": "Bearer Token",
       },
-    })
-      .then((res) => res.json())
-      .then((data) => data);
+    }).then((res) => {
+      if (res.status >= 200 && res.status <= 299) {
+        setSuccess(true);
+        return res.json();
+      }
+    });
   };
 
   return (
@@ -88,7 +87,7 @@ export const AddMenuForm = () => {
             type="text"
             name="menu_name"
             id="edit-form"
-            value={initialFormState.menu_name}
+            // value={initialFormState.menu_name}
             variant="standard"
             sx={{ border: "1", borderBottom: "1px solid lightgrey;" }}
             placeholder="Menu name"
@@ -104,7 +103,7 @@ export const AddMenuForm = () => {
           <TextField
             type="text"
             name="menu_price"
-            value={initialFormState.menu_price}
+            // value={initialFormState.menu_price}
             id="edit-form"
             variant="standard"
             sx={{ border: "1", borderBottom: "1px solid lightgrey;" }}
@@ -121,7 +120,7 @@ export const AddMenuForm = () => {
           <TextField
             type="text"
             name="menu_description"
-            value={initialFormState.menu_description}
+            // value={initialFormState.menu_description}
             id="edit-form"
             variant="standard"
             sx={{ border: "1", borderBottom: "1px solid lightgrey;" }}
@@ -130,6 +129,11 @@ export const AddMenuForm = () => {
           />
         </Box>
       </label>{" "}
+      {success && (
+        <p style={{ color: "green" }} className="success-message">
+          Success!
+        </p>
+      )}
       <br></br>
       <Box sx={{ display: "flex", gap: "4px", width: "40%" }}>
         <Button
@@ -139,13 +143,13 @@ export const AddMenuForm = () => {
         >
           Add
         </Button>
-        <Button
+        {/* <Button
           sx={{ width: "100%", color: "black", background: "lightgrey" }}
           variant="solid"
           onClick={handleClear}
         >
           Clear
-        </Button>
+        </Button> */}
       </Box>{" "}
     </div>
   );

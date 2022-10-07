@@ -1,14 +1,12 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Autocomplete from "@mui/material/Autocomplete";
 
 export default function EditMenuForm(props) {
-  const [filteredList, setFilteredList] = useState([]);
-  const [input, setInput] = useState("");
-  const [error, setError] = useState("");
+  const [success, setSuccess] = useState(false);
   const [itemConfirmed, setItemConfirmed] = useState({
     id: "",
     menu_type: "",
@@ -17,7 +15,7 @@ export default function EditMenuForm(props) {
     menu_description: "",
   });
 
-  console.log("PROPS", props);
+  // console.log("PROPS", props);
 
   const handleSubmit = () => {
     fetch(
@@ -29,13 +27,14 @@ export default function EditMenuForm(props) {
           "Content-Type": "application/json",
         },
       }
-    )
-      .then((res) => res.json())
-      .then(() => setInput(""))
-      .catch((e) => {
-        setError("Error editing menu");
-        console.error("ERROR EDITING", e);
-      });
+    ).then((res) => {
+      console.log("EDIT RESPONSE", res);
+      console.log("STATUS RESPONSE", typeof res.status);
+      if (res.status >= 200 && res.status <= 299) {
+        setSuccess(true);
+        return res.json();
+      }
+    });
   };
 
   const handleClear = () => {
@@ -46,34 +45,11 @@ export default function EditMenuForm(props) {
       menu_price: "",
       menu_description: "",
     });
-    setInput("");
+    setSuccess(false);
   };
-  useEffect(() => {
-    inputSearch();
-    //eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [input]);
-
-  console.log("ERROR", error)
-
-  async function inputSearch(e) {
-    const data = props.menu;
-    const results = [];
-
-    console.log(data, "DATA");
-    for (let i = 0; i < data.length; i++) {
-      const menuName = data[i].menu_name.toLowerCase().includes(input);
-
-      if (menuName) {
-        console.log("MENU NAME MATCHES", menuName);
-        results.push(data[i]);
-      }
-      console.log("RESULTS ", results);
-      setFilteredList(results);
-    }
-  }
 
   const handleChangeState = (_, newValue) => {
-    console.log("NEW VALUE", newValue);
+    // console.log("NEW VALUE", newValue);
     setItemConfirmed({
       id: newValue.id,
       menu_type: newValue.menu_type,
@@ -81,10 +57,11 @@ export default function EditMenuForm(props) {
       menu_price: newValue.menu_price,
       menu_description: newValue.menu_description,
     });
+    setSuccess(false);
   };
 
-  console.log("MENU PROPS", props.menu);
-  console.log("PROPS", props);
+  // console.log("MENU PROPS", props.menu);
+  // console.log("PROPS", props);
 
   return (
     <div className="admin">
@@ -101,7 +78,7 @@ export default function EditMenuForm(props) {
           renderInput={(params) => <TextField {...params} label="Menu" />}
         />
         <br></br>
-        <div className="edit-search">
+        {/* <div className="edit-search">
           {filteredList && (
             <ul className="filtered-list">
               {filteredList.map((row, idx) => (
@@ -117,7 +94,7 @@ export default function EditMenuForm(props) {
               ))}
             </ul>
           )}
-        </div>
+        </div> */}
         <label forhtml="name">
           {" "}
           Update name:
@@ -184,6 +161,11 @@ export default function EditMenuForm(props) {
             />{" "}
           </Box>
         </label>
+        {success && (
+          <p style={{ color: "green" }} className="success-message">
+            Success!
+          </p>
+        )}
         <br></br>
         <Box sx={{ display: "flex", gap: "4px", width: "40%" }}>
           <Button
