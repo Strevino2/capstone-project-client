@@ -417,6 +417,10 @@ body {
   top: 0;
 }
 
+.second-photo-gallery {
+  display: none;
+}
+
 @media screen and (min-width: 600px) {
   #toolbar {
     min-height: 40px !important;
@@ -517,6 +521,52 @@ body {
   .menu-description {
     font-size: 1.8em;
   }
+
+  .desktop-home {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto;
+    padding: 10px;
+  }
+
+  .second-photo-gallery {
+    display: block;
+    width: 100%;
+  }
+
+  .photo-gallery {
+    width: 100%;
+  }
+
+  .photo-container {
+    display: flex;
+  }
+
+  .carousel {
+    grid-column: 1 / 3;
+    grid-row: 3 /4;
+  }
+
+  .bottom-about-bar {
+    grid-column: 1 / 2;
+    grid-row: 2 /3;
+  }
+
+  .desktop-bottom-image {
+    grid-column: 2 / 3;
+    grid-row: 2 /3;
+  }
+
+  .google-map {
+    height: 100%;
+    width: 75vw;
+  }
+
+  .map {
+    display: flex;
+    justify-content: center;
+  }
+  
 }
 @media screen and (min-width: 1100px) {
   .bottom-info-home {

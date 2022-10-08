@@ -49,24 +49,48 @@ export default function Home() {
         <RoomIcon />
         101 US HWY 281 S, Johnson City, TX 78636
       </div>
-      <img
-        src="/18813285_1572998952725051_6362616169085327159_n-copy.jpg"
-        alt="Hill Country Cupboard logo"
-        style={{ width: "100%", height: "500px" }}
-      />
-      <div className="home-about-bar">
-        <div className="about-bar">
-          <h2>About Us</h2>
-          <p>
-            The oldest restaurant in Johnson City serving your favortie comfort foods and breakfast all day. Locally owned and
-            operated for over 40 years!
-          </p>
-        </div>{" "}
+      <div className="desktop-home">
+        <img
+          src="/18813285_1572998952725051_6362616169085327159_n-copy.jpg"
+          alt="Hill Country Cupboard logo"
+          style={{ width: "100%", height: "500px" }}
+        />
+        <div className="home-about-bar">
+          <div className="about-bar">
+            <h2>About Us</h2>
+            <p>
+              The oldest restaurant in Johnson City serving your favortie
+              comfort foods and breakfast all day. Locally owned and operated
+              for over 40 years!
+            </p>
+          </div>{" "}
+        </div>
+        <img
+        className="desktop-bottom-image"
+          src="/1101_509503759074581_1484176182_n.jpg"
+          alt="Hill Country Cupboard logo"
+          style={{ width: "100%", height: "100%" }}
+        />
+        <div className="home-about-bar">
+          <div className="about-bar bottom-about-bar">
+            <h2>About Us</h2>
+            <p>
+              The oldest restaurant in Johnson City serving your favortie
+              comfort foods and breakfast all day. Locally owned and operated
+              for over 40 years!
+            </p>
+          </div>{" "}
+        </div>
+        <div className="carousel">{<HomeCarousel />}</div>
       </div>
-      <div className="photo-gallery">
-        <PhotoGallery />
+      <div className="photo-container">
+        <div className="photo-gallery">
+          <PhotoGallery />
+        </div>
+        <div className="second-photo-gallery photo-gallery">
+          <PhotoGallery />
+        </div>
       </div>
-      <div className="carousel">{<HomeCarousel />}</div>
       <div className="bottom-div">
         <SimpleMap location={location} zoomLevel={17} />
       </div>
