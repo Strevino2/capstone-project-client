@@ -37,6 +37,7 @@ export default function Login(props) {
               maxAge: 7200,
             });
             setErrorMessage(false);
+            window.location.reload();
             navigate("/admin");
           } else {
             setErrorMessage(true);

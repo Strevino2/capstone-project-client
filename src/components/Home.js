@@ -55,7 +55,13 @@ export default function Home() {
         style={{ width: "100%", height: "500px" }}
       />
       <div className="home-about-bar">
-        <div className="about-bar">About us:</div>{" "}
+        <div className="about-bar">
+          <h2>About Us</h2>
+          <p>
+            The oldest restaurant in Johnson City serving your favortie comfort foods and breakfast all day. Locally owned and
+            operated for over 40 years!
+          </p>
+        </div>{" "}
       </div>
       <div className="photo-gallery">
         <PhotoGallery />

@@ -64,7 +64,6 @@ export default function EditMenuForm(props) {
   // console.log("PROPS", props);
 
   return (
-    <div className="admin">
       <form className="admin-form">
         <h2>Use this form to update a menu item</h2>
         <Autocomplete
@@ -184,6 +183,5 @@ export default function EditMenuForm(props) {
           </Button>
         </Box>{" "}
       </form>
-    </div>
   );
 }

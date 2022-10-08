@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { debounce } from "../utilities/helpers";
 import HamburgerMenu from "./HamburgerMenu";
+import cookie from "cookie";
 // import CustomHamburgerMenu from "./CustomHamburgerMenu";
 
 const CustomNavigation = () => {
@@ -23,6 +24,14 @@ const CustomNavigation = () => {
     // set state to new scroll position
     setPrevScrollPos(currentScrollPos);
   }, 100);
+
+  const handleLogout = () => {
+    document.cookie = cookie.serialize("loggedIn", null, { maxAge: 0 });
+    document.cookie = cookie.serialize("username", null, { maxAge: 0 });
+    window.location.reload();
+  };
+
+  let cookies = cookie.parse(document.cookie);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -52,6 +61,13 @@ const CustomNavigation = () => {
       </Link>
       <ul className="nav-list">
         {" "}
+        {cookies.loggedIn && (
+          <li className="desktop-nav-item">
+            <Link className="bottom-link" to="/admin">
+              Admin
+            </Link>
+          </li>
+        )}
         <a
           className="desktop-nav-item"
           href="https://www.facebook.com/HillCountryCupboard"
@@ -75,6 +91,13 @@ const CustomNavigation = () => {
             Menu
           </Link>
         </li>
+        {cookies.loggedIn && (
+          <li onClick={handleLogout} className="desktop-nav-item">
+            <Link className="bottom-link" to="/login">
+              Logout
+            </Link>
+          </li>
+        )}
       </ul>
       <div id="navbar-right">
         <a href="https://www.facebook.com/HillCountryCupboard">

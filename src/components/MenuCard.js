@@ -3,6 +3,7 @@ import Typography from "@mui/material/Typography";
 import { useState, useEffect } from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
+// import { shadows } from "@mui/system";
 
 export default function MenuCard(props) {
   const [menu, setMenu] = useState([]);
@@ -24,9 +25,13 @@ export default function MenuCard(props) {
   return (
     <>
       <ul className="menu-card">
-        <Card className="inner-menu-card">
-          <h3 style={{ textAlign: "center" }} className="menu-header">{props.menuType}</h3>
-          <p style={{display: "flex", justifyContent: "center"}}>{props.menuMessage}</p>
+        <Card sx={{ boxShadow: 12 }} className="inner-menu-card">
+          <h3 style={{ textAlign: "center" }} className="menu-header">
+            {props.menuType}
+          </h3>
+          <p style={{ display: "flex", justifyContent: "center" }}>
+            {props.menuMessage}
+          </p>
           <CardContent>
             {" "}
             <Typography component={"div"} className="menu-ul">
@@ -43,7 +48,9 @@ export default function MenuCard(props) {
                   .map((x, idx) => (
                     <li className="menu-li" key={idx}>
                       <div className="menu-span">
-                        <p style={{ color: "maroon" }}>{x.menu_name.toUpperCase()}</p>
+                        <p style={{ color: "maroon" }}>
+                          {x.menu_name.toUpperCase()}
+                        </p>
                         <p style={{ color: "maroon" }}>{x.menu_price}</p>
                       </div>
                       <p className="menu-description">{x.menu_description}</p>

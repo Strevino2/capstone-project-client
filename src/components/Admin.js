@@ -47,9 +47,13 @@ export default function Admin() {
     // console.log("HOURS", hours);
   }, [hours]);
 
+  // useEffect(() => {
+  //   window.location.reload();
+  // }, []);
+
   return (
     <div>
-      <div className="admin">
+      <div className="admin-page">
         <EditMenuForm menu={menu} />
         <AddMenuForm menu={menu} />
         <DeleteMenuForm menu={menu} />
