@@ -421,6 +421,10 @@ body {
   display: none;
 }
 
+.navbar-right {
+  display: flex;
+}
+
 @media screen and (min-width: 600px) {
   #toolbar {
     min-height: 40px !important;
