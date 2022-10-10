@@ -477,6 +477,12 @@ body {
   padding-bottom: 40px;
 }
 
+.bottom-menu-message {
+  font-size: 1.2em;
+  text-align: center;
+  font-weight: bolder;
+}
+
 @media screen and (min-width: 700px) {
   #toolbar {
     min-height: 40px !important;
