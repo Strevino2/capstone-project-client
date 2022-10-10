@@ -45,12 +45,20 @@ export default function HamburgerMenu() {
       </IconButton>
       <Menu
         id="basic-menu"
-        open={open}
-        anchorEl={anchorEl}
-        onClose={handleClose}
+        anchorReference="anchorPosition"
+        anchorPosition={{ top: 96, left: 0 }}
         anchorOrigin={{
-          vertical: 'bottom',
+          vertical: 'top',
           horizontal: 'left',
+        }}
+        transformOrigin={{
+          vertical: 'top',
+          horizontal: 'left',
+        }}
+        open={open}
+        onClose={handleClose}
+        MenuListProps={{
+          "aria-labelledby": "basic-button",
         }}
       >
         <MenuList
