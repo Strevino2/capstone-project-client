@@ -16,15 +16,12 @@ export function DeleteMenuForm(props) {
     menu_description: "",
   });
 
-  console.log("PROPS", props);
-
   const handleChange = (e) => {
     console.log("CHANGE", e.target.value);
     setInput(e.target.value.toLowerCase());
   };
 
   let cookies = cookie.parse(document.cookie);
-  console.log({cookies})
 
   const handleSubmit = () => {
     fetch(

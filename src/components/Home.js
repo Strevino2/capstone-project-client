@@ -2,6 +2,7 @@ import * as React from "react";
 import RoomIcon from "@mui/icons-material/Room";
 import SimpleMap from "./Map";
 import PhotoGallery from "./PhotoGallery";
+import PhotoGallery2 from "./PhotoGallery2";
 import { Link } from "react-router-dom";
 import HomeCarousel from "./HomeCarousel";
 
@@ -48,34 +49,36 @@ export default function Home() {
             </p>
           </div>{" "}
         </div>
-        <img
-          className="desktop-bottom-image"
-          src="/1101_509503759074581_1484176182_n.jpg"
-          alt="Hill Country Cupboard logo"
-          style={{ width: "100%", height: "100%" }}
-        />
+        <div className="desktop-bottom-image">
+          <img
+            src="/1101_509503759074581_1484176182_n.jpg"
+            alt="Hill Country Cupboard logo"
+            style={{ width: "100%", height: "100%" }}
+          />
+        </div>
         <div className="home-about-bar">
           <div className="about-bar bottom-about-bar">
-            <h2>About Us</h2>
+            <h2>Specials</h2>
             <p>
-              The oldest restaurant in Johnson City serving your favorite
-              comfort foods and breakfast all day. Locally owned and operated
-              for over 40 years!
+              Call (830-868-4625) or ask your server for the daily specials for
+              dine-in customers only!
             </p>
           </div>{" "}
         </div>
         <div className="carousel">{<HomeCarousel />}</div>
       </div>
-      <div className="photo-container">
-        <div className="photo-gallery">
-          <PhotoGallery />
+      <div className="bottom-background">
+        <div className="photo-container">
+          <div className="photo-gallery">
+            <PhotoGallery2 />
+          </div>
+          <div className="second-photo-gallery photo-gallery">
+            <PhotoGallery />
+          </div>
         </div>
-        <div className="second-photo-gallery photo-gallery">
-          <PhotoGallery />
+        <div className="bottom-div">
+          <SimpleMap location={location} zoomLevel={17} />
         </div>
-      </div>
-      <div className="bottom-div">
-        <SimpleMap location={location} zoomLevel={17} />
       </div>
       <div className="bottom-info-home">
         <div className="bottom-location">

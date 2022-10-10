@@ -16,8 +16,6 @@ export default function EditMenuForm(props) {
     menu_description: "",
   });
 
-  // console.log("PROPS", props);
-
   const handleSubmit = () => {
     fetch(
       `https://capstone-project-gilt-three.vercel.app/menu/${itemConfirmed.id}`,
@@ -53,7 +51,6 @@ export default function EditMenuForm(props) {
   };
 
   const handleChangeState = (_, newValue) => {
-    // console.log("NEW VALUE", newValue);
     setItemConfirmed({
       id: newValue.id,
       menu_type: newValue.menu_type,
@@ -64,8 +61,6 @@ export default function EditMenuForm(props) {
     setSuccess(false);
   };
 
-  // console.log("MENU PROPS", props.menu);
-  // console.log("PROPS", props);
 
   return (
       <form className="admin-form">
@@ -81,23 +76,6 @@ export default function EditMenuForm(props) {
           renderInput={(params) => <TextField {...params} label="Menu" />}
         />
         <br></br>
-        {/* <div className="edit-search">
-          {filteredList && (
-            <ul className="filtered-list">
-              {filteredList.map((row, idx) => (
-                <li
-                  key={idx}
-                  onClick={() => {
-                    setItemConfirmed(row);
-                    setFilteredList([]);
-                  }}
-                >
-                  {row.menu_name}
-                </li>
-              ))}
-            </ul>
-          )}
-        </div> */}
         <label forhtml="name">
           {" "}
           Update name:

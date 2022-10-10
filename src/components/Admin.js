@@ -2,7 +2,8 @@ import * as React from "react";
 import EditMenuForm from "./EditMenuForm";
 import { useState, useEffect } from "react";
 import { AddMenuForm } from "./AddMenuForm";
-import { DeleteMenuForm } from "./DeleteMenuForm";
+// import { DeleteMenuForm } from "./DeleteMenuForm";
+import DeleteMenuFormCopy  from "./DeleteMenuFormCopy";
 import cookie from "cookie";
 // import SnackBar from "./SnackBar";
 
@@ -56,7 +57,8 @@ export default function Admin() {
       <div className="admin-page">
         <EditMenuForm menu={menu} />
         <AddMenuForm menu={menu} />
-        <DeleteMenuForm menu={menu} />
+        {/* <DeleteMenuForm menu={menu} /> */}
+        <DeleteMenuFormCopy menu={menu}/>
       </div>
     </div>
   );
