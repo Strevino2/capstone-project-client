@@ -36,6 +36,9 @@ export default function Login(props) {
             document.cookie = cookie.serialize("username", login.username, {
               maxAge: 7200,
             });
+            document.cookie = cookie.serialize("token", response.token, {
+              maxAge: 7200,
+            });
             setErrorMessage(false);
             window.location.reload();
             navigate("/admin");

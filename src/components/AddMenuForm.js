@@ -3,6 +3,7 @@ import { useState } from "react";
 import Box from "@mui/joy/Box";
 import TextField from "@mui/joy/TextField";
 import Button from "@mui/joy/Button";
+import cookie from "cookie";
 
 export const AddMenuForm = () => {
   const [success, setSuccess] = useState(false);
@@ -13,6 +14,8 @@ export const AddMenuForm = () => {
     menu_price: "",
     menu_description: "",
   };
+
+  let cookies = cookie.parse(document.cookie);
 
   const createUserReducer = (state, action) => {
     switch (action.type) {
@@ -49,7 +52,7 @@ export const AddMenuForm = () => {
       body: JSON.stringify(state),
       headers: {
         "Content-Type": "application/json",
-        // "Authorization": "Bearer Token",
+        "Authorization": `Bearer ${cookies.token}`,
       },
     }).then((res) => {
       if (res.status >= 200 && res.status <= 299) {

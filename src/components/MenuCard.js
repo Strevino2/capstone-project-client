@@ -29,7 +29,7 @@ export default function MenuCard(props) {
           <h3 style={{ textAlign: "center" }} className="menu-header">
             {props.menuType}
           </h3>
-          <p style={{ display: "flex", justifyContent: "center" }}>
+          <p className="menu-message" style={{ display: "flex", justifyContent: "center" }}>
             {props.menuMessage}
           </p>
           <CardContent>

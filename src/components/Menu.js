@@ -6,23 +6,25 @@ export default function Menu() {
     <div className="menu-container">
       <div className="image-container">
         <h2 className="menu-h2">Our Menu</h2>
+        <p className="menu-h2-message">Call us or ask your server about our daily specials!</p>
         <div className="menu-cards">
-        <MenuCard menuType="Appetizers" menuMessage="All our appetizers are hand-breaded" />
-        <MenuCard menuType="From the Grill" menuMessage="All our appetizers are hand-breaded" />
-        <MenuCard menuType="Cupboard Burgers" menuMessage="All our appetizers are hand-breaded" />
-        <MenuCard menuType="Hill Country Baskets" menuMessage="All our appetizers are hand-breaded" />
-        <MenuCard menuType="Cupboard Sandwiches" menuMessage="All our appetizers are hand-breaded" />
-        <MenuCard menuType="Hill Country Salads" menuMessage="All our appetizers are hand-breaded" />
-        <MenuCard menuType="Hungry Man Breakfast" menuMessage="All our appetizers are hand-breaded" />
-        <MenuCard menuType="Quick Breakfast" menuMessage="All our appetizers are hand-breaded" />
-        <MenuCard menuType="Pancakes and Biscuits" menuMessage="All our appetizers are hand-breaded" />
-        <MenuCard menuType="Texican Style Breakfast" menuMessage="All our appetizers are hand-breaded" />
-        <MenuCard menuType="Drinks from the Cupboard" menuMessage="All our appetizers are hand-breaded" />
-        <MenuCard menuType="A 'La Carte" menuMessage="All our appetizers are hand-breaded" />
-        <MenuCard menuType="Veggies On The Side" menuMessage="All our appetizers are hand-breaded" />
+        <MenuCard menuType="Appetizers" menuMessage="All Hand-breaded Appetizers are made fresh to order(never frozen), and served with our Homemade Buttermilk Ranch Dressing." />
+        <MenuCard menuType="From the Grill" menuMessage="Plates from this selection are served with a choice of two sides." />
+        <MenuCard menuType="Cupboard Burgers" menuMessage="See server or online ordering for toppings your way." />
+        <MenuCard menuType="Hill Country Baskets" menuMessage="Served with French Fries." />
+        <MenuCard menuType="Cupboard Sandwiches" menuMessage="All Sandwiches are served with one side." />
+        <MenuCard menuType="Hill Country Salads" menuMessage="Served with the dressing of your choice." />
+        <MenuCard menuType="Hungry Man Breakfast" menuMessage="Breakfast served all day!" />
+        <MenuCard menuType="Quick Breakfast" menuMessage="Breakfast served all day!" />
+        <MenuCard menuType="Pancakes and Biscuits" menuMessage="All pancakes and biscuits are baked fresh daily!" />
+        <MenuCard menuType="Texican Style Breakfast" menuMessage="Plates from this selection are served with Country Fried Potatoes and Refried Beans, Corn or Flour tortilla." />
+        <MenuCard menuType="Drinks from the Cupboard"/>
+        <MenuCard menuType="A 'La Carte"/>
+        <MenuCard menuType="Veggies On The Side"/>
         {/* <MenuCard menuType="Specials"/> */}
         </div>
       </div>
+      <p>Parties of 5 or more</p>
     </div>
   );
 }

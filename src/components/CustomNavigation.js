@@ -1,17 +1,17 @@
-import React, { useRef } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { debounce } from "../utilities/helpers";
-import { Burger } from "./Burger/Burger";
-import { Menu } from "./Menu/Menu";
-// import HamburgerMenu from "./HamburgerMenu";
+// import { Burger } from "./Burger/Burger";
+// import { Menu } from "./Menu/Menu";
+import HamburgerMenu from "./HamburgerMenu";
 import cookie from "cookie";
 // import CustomHamburgerMenu from "./CustomHamburgerMenu";
 
 const CustomNavigation = () => {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
-  const node = useRef();
+  // const node = useRef();
 
   const handleScroll = debounce(() => {
     // find current scroll position
@@ -62,6 +62,7 @@ const CustomNavigation = () => {
           }}
         />
       </Link>
+
       <ul className="nav-list">
         {" "}
         {cookies.loggedIn && (
@@ -103,6 +104,12 @@ const CustomNavigation = () => {
         )}
       </ul>
       <div id="navbar-right">
+        <div className="nav-header">
+          <h2>
+            <Link style={{ color: "white", fontSize: 22 }} to="/">Hill Country Cupboard</Link>
+          </h2>{" "}
+        </div>
+
         {/* <a href="https://www.facebook.com/HillCountryCupboard">
           <img
             src="/facebook-24 (1).png"
@@ -113,12 +120,14 @@ const CustomNavigation = () => {
             }}
           />
         </a> */}
-        {/* <HamburgerMenu /> */}
+        <div className="hamburger-div">
+          <HamburgerMenu />
+        </div>
         {/* <CustomHamburgerMenu /> */}
-        <div className="burger-icon-and-menu" ref={node}>
+        {/* <div className="burger-icon-and-menu" ref={node}>
           <Burger />
           <Menu />
-        </div>
+        </div> */}
       </div>
     </div>
   );

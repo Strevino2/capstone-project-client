@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Box from "@mui/joy/Box";
 import TextField from "@mui/joy/TextField";
 import Button from "@mui/joy/Button";
+import cookie from "cookie";
 
 export function DeleteMenuForm(props) {
   const [filteredList, setFilteredList] = useState([]);
@@ -22,12 +23,16 @@ export function DeleteMenuForm(props) {
     setInput(e.target.value.toLowerCase());
   };
 
+  let cookies = cookie.parse(document.cookie);
+  console.log({cookies})
+
   const handleSubmit = () => {
     fetch(
       `https://capstone-project-gilt-three.vercel.app/menu/${itemConfirmed.id}`,
       {
         method: "DELETE",
         headers: {
+          "Authorization": `Bearer ${cookies.token}`,
           "Content-Type": "application/json",
         },
       }

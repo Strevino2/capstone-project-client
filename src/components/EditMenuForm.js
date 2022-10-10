@@ -4,6 +4,7 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Autocomplete from "@mui/material/Autocomplete";
+import cookie from "cookie";
 
 export default function EditMenuForm(props) {
   const [success, setSuccess] = useState(false);
@@ -25,6 +26,7 @@ export default function EditMenuForm(props) {
         body: JSON.stringify(itemConfirmed),
         headers: {
           "Content-Type": "application/json",
+          "Authorization": `Bearer ${cookies.token}`,
         },
       }
     ).then((res) => {
@@ -36,6 +38,8 @@ export default function EditMenuForm(props) {
       }
     });
   };
+
+  let cookies = cookie.parse(document.cookie);
 
   const handleClear = () => {
     setItemConfirmed({
