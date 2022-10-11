@@ -483,6 +483,20 @@ body {
   font-weight: bolder;
 }
 
+.MuiMenu-paper {
+  left: 0px !important;
+  width: 1000px;
+}
+.css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper {
+  max-width: 100% !important;
+  border-radius: 0px !important;
+  border-top: 1px solid grey;
+}
+
+.MuiMenu-list {
+  width: 800px;
+}
+
 @media screen and (min-width: 700px) {
   #toolbar {
     min-height: 40px !important;

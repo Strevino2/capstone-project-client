@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import HomeCarousel from "./HomeCarousel";
 
 export default function Home() {
-  const myRef = useRef(null)
+  const myRef = useRef(null);
 
   const executeScroll = () => myRef.current.scrollIntoView();
 

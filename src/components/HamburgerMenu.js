@@ -46,18 +46,24 @@ export default function HamburgerMenu() {
       <Menu
         id="basic-menu"
         open={open}
-        anchorEl={anchorEl}
         onClose={handleClose}
+        MenuListProps={{ disablePadding: true }}
+        anchorReference="anchorPosition"
+        anchorPosition={{ top: 96, left: 0 }}
         anchorOrigin={{
-          vertical: 'bottom',
-          horizontal: 'left',
+          vertical: "top",
+          horizontal: "left",
+        }}
+        transformOrigin={{
+          vertical: "top",
+          horizontal: "left",
         }}
       >
         <MenuList
           sx={{
             backgroundColor: "#282828",
             paddingTop: "0px !important",
-            width: "100%",
+            width: "800px",
           }}
         >
           <MenuItem onClick={handleClose}>
