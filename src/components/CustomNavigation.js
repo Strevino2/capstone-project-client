@@ -109,17 +109,6 @@ const CustomNavigation = () => {
             <Link style={{ color: "white", fontSize: 22 }} to="/">Hill Country Cupboard</Link>
           </h2>{" "}
         </div>
-
-        {/* <a href="https://www.facebook.com/HillCountryCupboard">
-          <img
-            src="/facebook-24 (1).png"
-            alt="Facebook logo"
-            style={{
-              padding: "10px",
-              height: "50px",
-            }}
-          />
-        </a> */}
         <div className="hamburger-div">
           <HamburgerMenu />
         </div>

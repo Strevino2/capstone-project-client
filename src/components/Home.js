@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useRef } from "react";
 import RoomIcon from "@mui/icons-material/Room";
 import SimpleMap from "./Map";
 import PhotoGallery from "./PhotoGallery";
@@ -7,6 +7,10 @@ import { Link } from "react-router-dom";
 import HomeCarousel from "./HomeCarousel";
 
 export default function Home() {
+  const myRef = useRef(null)
+
+  const executeScroll = () => myRef.current.scrollIntoView();
+
   const location = {
     address: "101 US HWY 281 S, Johnson City, TX 78636.",
     lat: 30.2768,
@@ -27,7 +31,7 @@ export default function Home() {
           style={{ width: "100%", height: "100%" }}
         />
       </div>
-      <div className="address-bar">
+      <div onClick={executeScroll} className="address-bar">
         <RoomIcon />
         101 US HWY 281 S, Johnson City, TX 78636
       </div>
@@ -43,7 +47,7 @@ export default function Home() {
           <div className="about-bar">
             <h2>About Us</h2>
             <p>
-              The oldest restaurant in Johnson City serving your favortie
+              The oldest restaurant in Johnson City serving your favorite
               comfort foods and breakfast all day. Locally owned and operated
               for over 40 years!
             </p>
@@ -76,7 +80,7 @@ export default function Home() {
             <PhotoGallery />
           </div>
         </div>
-        <div className="bottom-div">
+        <div ref={myRef} className="bottom-div">
           <SimpleMap location={location} zoomLevel={17} />
         </div>
       </div>
@@ -98,15 +102,6 @@ export default function Home() {
           <p>7:00AM - 5:00PM</p>
         </div>
       </div>
-      {/* <ul> */}
-      {/* {hours.map((x, idx) => (
-            <li key={idx}>
-              <h4>
-                {x.dining_room} {x.day} {x.hours}
-              </h4>
-            </li>
-          ))} */}
-      {/* </ul> */}
     </div>
   );
 }
