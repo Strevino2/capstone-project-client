@@ -427,7 +427,6 @@ body {
   height: 320px;
 }
 
-
 .nav-header h2 {
   color: white;
   font-size: 1.8em;
@@ -701,11 +700,10 @@ body {
     background-color: #282828;
     height: 800px;
   }
-  
+
   .carousel-div {
     height: 700px;
   }
-  
 }
 
 @media screen and (min-width: 799px) {
