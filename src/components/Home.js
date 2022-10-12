@@ -47,9 +47,9 @@ export default function Home() {
           <div className="about-bar">
             <h2>About Us</h2>
             <p>
-              The oldest restaurant in Johnson City serving your favorite
-              comfort foods and breakfast all day. Locally owned and operated
-              for over 40 years!
+              Locally owned and operated for over 40 years! The oldest running
+              restaurant in Johnson City serving your favorite comfort foods and
+              breakfast all day.
             </p>
           </div>{" "}
         </div>
@@ -92,8 +92,15 @@ export default function Home() {
         </div>{" "}
         <div className="bottom-contact-us">
           <h2>Contact Us</h2>
-          <p>830-868-4625</p>
-          <a style={{ color: "white"}} href="mailto: HillCountryCupboard@gmail.com">HillCountryCupboard@gmail.com</a>
+          <a style={{ color: "white" }} href="tel: 830-868-4625">
+            <p>830-868-4625</p>
+          </a>
+          <a
+            style={{ color: "white" }}
+            href="mailto: HillCountryCupboard@gmail.com"
+          >
+            HillCountryCupboard@gmail.com
+          </a>
         </div>
         <div className="bottom-hours">
           <h2>Hours</h2>
