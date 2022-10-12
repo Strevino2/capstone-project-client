@@ -54,6 +54,14 @@ const BottomNavigation = () => {
                 </a>
               </li>
               <li className="bottom-list-item">
+                <a
+                  className="bottom-link"
+                  href="tel: 830-868-4625"
+                >
+                  Call
+                </a>
+              </li>
+              <li className="bottom-list-item">
                 <Link className="bottom-link" to="/menu">
                   Menu
                 </Link>

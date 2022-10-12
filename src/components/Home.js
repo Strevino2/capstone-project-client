@@ -64,8 +64,8 @@ export default function Home() {
           <div className="about-bar bottom-about-bar">
             <h2>Specials</h2>
             <p>
-              Call (830-868-4625) or ask your server for the daily specials for
-              dine-in customers only!
+              Call <a href="tel: 830-868-4625">(830-868-4625)</a> or ask your
+              server for the daily specials for dine-in customers only!
             </p>
           </div>{" "}
         </div>

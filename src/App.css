@@ -206,6 +206,7 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  font-size: .95em;
   list-style: none;
   width: 100%;
   color: white;
@@ -216,6 +217,7 @@ body {
 .bottom-link {
   color: white;
   text-decoration: none;
+  font-size: 1em;
 }
 
 .top-link {
