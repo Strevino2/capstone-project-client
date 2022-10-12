@@ -26,6 +26,7 @@ p {
 .menu-h2 {
   display: flex;
   align-items: center;
+  text-align: center;
   justify-content: center;
   margin-top: 0;
   padding-top: 20px;
@@ -81,6 +82,7 @@ p {
   padding-left: 0;
   width: 100%;
   margin-bottom: 40px;
+  max-width: 600px;
 }
 
 .inner-menu-card {
@@ -94,6 +96,8 @@ p {
   font-weight: bolder;
   font-size: 2.2em;
   color: black;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .menu-span {
@@ -217,7 +221,6 @@ body {
 .bottom-link {
   color: white;
   text-decoration: none;
-  font-size: 1em;
 }
 
 .top-link {
@@ -437,6 +440,8 @@ body {
 
 .menu-message {
   text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .desktop-bottom-image {
@@ -538,7 +543,8 @@ body {
     align-items: center;
     margin: 0px;
     padding: 0px;
-    gap: 80px;
+    gap: 10px;
+    width: 100%;
   }
 
   .desktop-nav-item {

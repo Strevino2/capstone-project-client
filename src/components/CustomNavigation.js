@@ -72,6 +72,11 @@ const CustomNavigation = () => {
             </Link>
           </li>
         )}
+        <li className="desktop-nav-item">
+          <Link className="bottom-link" to="/">
+            Home
+          </Link>
+        </li>
         <a
           className="desktop-nav-item"
           href="https://www.facebook.com/HillCountryCupboard"
@@ -94,6 +99,14 @@ const CustomNavigation = () => {
           <Link className="bottom-link" to="/menu">
             Menu
           </Link>
+        </li>
+        <li className="desktop-nav-item">
+          <a
+            className="bottom-link"
+            href="tel: 830-868-4625"
+          >
+            Call us
+          </a>
         </li>
         {cookies.loggedIn && (
           <li onClick={handleLogout} className="desktop-nav-item">

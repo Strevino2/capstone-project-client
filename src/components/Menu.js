@@ -20,7 +20,7 @@ export default function Menu() {
           />
           <MenuCard
             menuType="Cupboard Burgers"
-            menuMessage="See server or online ordering for toppings your way."
+            menuMessage="Flame-Broiled burgers with the toppings your way."
           />
           <MenuCard
             menuType="Hill Country Baskets"

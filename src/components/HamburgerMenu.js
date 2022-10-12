@@ -113,6 +113,14 @@ export default function HamburgerMenu() {
               Facebook
             </a>
           </MenuItem>
+          <MenuItem onClick={handleClose}>
+          <a
+              className="top-link"
+              href="tel: 830-868-4625"
+            >
+              Call us
+            </a>
+          </MenuItem>
         </MenuList>
       </Menu>
     </div>

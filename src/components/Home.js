@@ -45,8 +45,8 @@ export default function Home() {
         </div>
         <div className="home-about-bar">
           <div className="about-bar">
-            <h2>About Us</h2>
-            <p>
+            <h2 style={{ color: "black" }}>About Us</h2>
+            <p style={{ color: "black" }}>
               Locally owned and operated for over 40 years! The oldest running
               restaurant in Johnson City serving your favorite comfort foods and
               breakfast all day.
@@ -62,9 +62,9 @@ export default function Home() {
         </div>
         <div className="home-about-bar">
           <div className="about-bar bottom-about-bar">
-            <h2>Specials</h2>
-            <p>
-              Call <a href="tel: 830-868-4625">(830-868-4625)</a> or ask your
+            <h2 style={{ color: "black" }}>Specials</h2>
+            <p style={{ color: "black" }}>
+              Call <a style={{ color: "black" }} href="tel: 830-868-4625">(830-868-4625)</a>or ask your
               server for the daily specials for dine-in customers only!
             </p>
           </div>{" "}
