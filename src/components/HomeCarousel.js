@@ -9,8 +9,8 @@ export default function HomeCarousel() {
         <Carousel.Item interval={4500}>
           <div className="carousel-div">
             <img
-              className="d-block w-100 h-100"
-              src="/Adobe_Express_20221001_2213090_1.png"
+              className="d-block h-100"
+              src="/297031234_5933796059978630_4496011331339506165_n.jpg"
               alt="Hill Country Cupboard building view"
             />
           </div>
@@ -35,7 +35,7 @@ export default function HomeCarousel() {
         <Carousel.Item interval={4500}>
           <div className="carousel-div">
             <img
-              className="d-block w-100 h-100"
+              className="d-block h-100"
               src="/ChickenFriedSteakinWindow.jpg"
               alt="Hill Country Cupboard bar view"
             />
@@ -48,7 +48,7 @@ export default function HomeCarousel() {
         <Carousel.Item interval={4500}>
           <div className="carousel-div">
             <img
-              className="d-block w-100 h-100"
+              className="d-block h-100"
               src="/ChickenFriedChicken.jpg"
               alt="Hill Country Cupboard building view"
             />
@@ -61,7 +61,7 @@ export default function HomeCarousel() {
         <Carousel.Item interval={4500}>
           <div className="carousel-div">
             <img
-              className="d-block w-100 h-100"
+              className="d-block h-100"
               src="/TexicanStyleBreakfast.jpg"
               alt="Hill Country Cupboard building view"
             />

@@ -1,8 +1,3 @@
-.appbar {
-  color: green;
-  width: 100%;
-}
-
 .html {
   height: 100%;
 }
@@ -177,9 +172,9 @@ body {
 #navbar-right {
   display: flex;
   flex-direction: row;
-  /* float: right; */
-  padding-top: 10px;
+  padding-top: 4px;
   justify-content: space-around;
+  float: right;
 }
 
 #navbar #logo {
@@ -187,11 +182,6 @@ body {
   font-weight: bold;
   transition: 0.4s;
 }
-
-/* #navbar a:hover {
-  background-color: #ddd;
-  color: black;
-} */
 
 #navbar a.active {
   background-color: dodgerblue;
@@ -254,13 +244,12 @@ body {
 }
 
 .desktop-nav-item {
-  width: 100px;
+  width: 200px;
   display: flex;
   justify-content: center;
   justify-content: space-around;
   align-items: center;
   list-style: none;
-  width: 100%;
   color: white;
   padding-left: 0px !important;
 }
@@ -369,10 +358,11 @@ body {
 }
 
 .nav-logo {
-  width: 140px;
+  width: 240px;
   height: 80px;
   margin-left: 10px;
-  clip-path: polygon(
+  border-radius: 8%;
+  /* clip-path: polygon(
     20% 0%,
     80% 0%,
     100% 20%,
@@ -381,7 +371,7 @@ body {
     20% 100%,
     0% 80%,
     0% 20%
-  );
+  ); */
 }
 
 .login-error-msg {
@@ -430,7 +420,6 @@ body {
 .nav-header h2 {
   color: white;
   font-size: 1.8em;
-  font-family: "Rye", cursive;
 }
 
 .top-food-image {
@@ -497,6 +486,10 @@ body {
   width: 800px;
 }
 
+.menu-button {
+  font-size: 1.4em;
+}
+
 @media screen and (min-width: 700px) {
   #toolbar {
     min-height: 40px !important;
@@ -509,7 +502,6 @@ body {
 
 @media screen and (min-width: 800px) {
   #navbar {
-    height: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -527,15 +519,15 @@ body {
   }
 
   .nav-logo {
-    height: 140px;
-    width: 260px;
+    height: 100px;
+    width: 300px;
   }
 
   .desktop-nav {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
   }
 
   .nav-list {
@@ -609,7 +601,7 @@ body {
 
   .desktop-home {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto auto;
     padding: 10px;
   }
@@ -659,8 +651,34 @@ body {
     display: flex;
     justify-content: center;
   }
+
+  .top-home-image {
+    display: flex;
+    justify-content: center;
+    background-color: #282828;
+  }
+  
+  .top-food-image {
+    height: 400px;
+  }
+
+  .desktop-bottom-image {
+    height: 400px;
+  }
+
+  .top-home-image img {
+    width: 75% !important;
+  }
+
+  .top-food-image img {
+    max-width: 100% !important;
+  }
+
+  .desktop-bottom-image img {
+    max-width: 100% !important;
+  }
 }
-@media screen and (min-width: 1100px) {
+@media screen and (min-width: 1200px) {
   .bottom-info-home {
     gap: 200px;
   }
@@ -682,15 +700,15 @@ body {
 
   .address-bar {
     font-size: 26px;
-    color: var(--bs-link-color);
+    color: white;
   }
 
   .top-food-image {
-    height: 400px;
+    height: 500px;
   }
 
   .desktop-bottom-image {
-    height: 400px;
+    height: 500px;
   }
 
   .menu-h2-message {

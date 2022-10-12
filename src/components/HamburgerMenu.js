@@ -30,6 +30,7 @@ export default function HamburgerMenu() {
       <IconButton
         size="large"
         edge="start"
+        // fontSize="4em"
         color="inherit"
         className="menu-button"
         aria-label="menu"
@@ -41,6 +42,7 @@ export default function HamburgerMenu() {
           aria-expanded={open ? "true" : undefined}
           aria-haspopup="true"
           className="menu-button"
+          fontSize= "1em"
         />
       </IconButton>
       <Menu

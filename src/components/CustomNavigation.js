@@ -53,12 +53,12 @@ const CustomNavigation = () => {
     >
       <Link to="/">
         <img
-          src="/Adobe_Express_20221001_2213090_1.png"
+          src="/Screenshot-2022-10-12-115024.jpg"
           alt="Hill Country Cupboard logo"
           className="nav-logo"
           style={{
             paddingTop: 6,
-            borderRadius: "50%",
+            // borderRadius: "50%",
           }}
         />
       </Link>
@@ -104,11 +104,11 @@ const CustomNavigation = () => {
         )}
       </ul>
       <div id="navbar-right">
-        <div className="nav-header">
+        {/* <div className="nav-header">
           <h2>
             <Link style={{ color: "white", fontSize: 22 }} to="/">Hill Country Cupboard</Link>
           </h2>{" "}
-        </div>
+        </div> */}
         <div className="hamburger-div">
           <HamburgerMenu />
         </div>

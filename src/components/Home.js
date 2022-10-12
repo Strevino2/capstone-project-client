@@ -20,7 +20,7 @@ export default function Home() {
   return (
     <div className="home">
       <div className="advertisement-bar">
-        <Link to="/menu">
+        <Link style={{ color: "white" }} to="/menu">
           Home of the World's Best Chicken Fried Steak(Nearly 3 dozen sold!!)
         </Link>
       </div>{" "}
@@ -93,6 +93,7 @@ export default function Home() {
         <div className="bottom-contact-us">
           <h2>Contact Us</h2>
           <p>830-868-4625</p>
+          <a style={{ color: "white"}} href="mailto: HillCountryCupboard@gmail.com">HillCountryCupboard@gmail.com</a>
         </div>
         <div className="bottom-hours">
           <h2>Hours</h2>
