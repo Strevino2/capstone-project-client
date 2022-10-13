@@ -65,7 +65,7 @@ export default function Home() {
             <h2 style={{ color: "black" }}>Specials</h2>
             <p style={{ color: "black" }}>
               Call <a style={{ color: "black" }} href="tel: 830-868-4625">(830-868-4625)</a>or ask your
-              server for the daily specials for dine-in customers only!
+              server for the daily specials!
             </p>
           </div>{" "}
         </div>
