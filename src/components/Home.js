@@ -5,6 +5,7 @@ import PhotoGallery from "./PhotoGallery";
 import PhotoGallery2 from "./PhotoGallery2";
 import { Link } from "react-router-dom";
 import HomeCarousel from "./HomeCarousel";
+// import ResponsivePhotoGallery from "./ResponsivePhotoGallery";
 
 export default function Home() {
   const myRef = useRef(null);
@@ -78,6 +79,7 @@ export default function Home() {
           </div>
           <div className="second-photo-gallery photo-gallery">
             <PhotoGallery />
+            {/* <ResponsivePhotoGallery /> */}
           </div>
         </div>
         <div ref={myRef} className="bottom-div">
