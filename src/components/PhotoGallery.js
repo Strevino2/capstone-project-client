@@ -36,7 +36,7 @@ export default function QuiltedImageList() {
 const itemData = [
   {
     img: "/26101_113419205349707_649150_n.jpg",
-    title: 'building',
+    title: 'building view of Hill Country Cupboard',
     rows: 2,
     cols: 2,
   },
@@ -46,11 +46,11 @@ const itemData = [
   },
   {
     img: '/Mimosa.jpg',
-    title: 'Logo',
+    title: 'Hill Country Cupboard Mimosa',
   },
   {
     img: '/BiscuitsandGravy.jpg',
-    title: 'Coffee',
+    title: 'Biscuits and Gravy',
     cols: 2,
   },
   {
@@ -71,25 +71,25 @@ const itemData = [
   },
   {
     img: '/ChickenFriedSteak.jpg',
-    title: 'CFS',
+    title: 'Chicken fried steak special',
   },
   {
     img: '/ChickenSpaghettiSpecial.jpg',
-    title: 'Chicken Spaghetti',
+    title: 'Chicken Spaghetti Special',
     rows: 2,
     cols: 2,
   },
   {
     img: '/ChickenTortillaSoup.jpg',
-    title: 'ChickenTortillaSoup',
+    title: 'Chicken Tortilla Soup',
   },
   {
     img: '/CrispyTacos.jpg',
-    title: 'Taco Plate',
+    title: 'Crispy Taco Plate Special',
   },
   {
     img: '/DessertDisplay.jpg',
-    title: 'Dessert sign',
+    title: 'Dessert sign inside Hill Country Cupboard',
     cols: 2,
   },
 ];

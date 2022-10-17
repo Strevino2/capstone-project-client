@@ -3,7 +3,7 @@ import MenuCard from "./MenuCard";
 
 export default function Menu() {
   return (
-    <div className="menu-container">
+    <div alt="Background image of Eggs, Sausage, and Potatoes" className="menu-container">
       <div className="image-container">
         <h2 className="menu-h2">Our Menu</h2>
         <p className="menu-h2-message">

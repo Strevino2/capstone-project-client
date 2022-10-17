@@ -36,60 +36,60 @@ export default function QuiltedImageList() {
 const itemData = [
   {
     img: "/Adobe_Express_20221001_2213090_1.png",
-    title: 'Breakfast',
+    title: 'Hill Country Cupboard Logo',
     rows: 2,
     cols: 2,
   },
   {
     img: '/H.C.CLogo2021.jpg',
-    title: 'Burger',
+    title: 'multiple plates of food',
   },
   {
     img: '/PancakeSpecial.jpg',
-    title: 'Camera',
+    title: 'Pancake special',
   },
   {
     img: '/MimosaTop.jpg',
-    title: 'Coffee',
+    title: 'top view of HCC mimosa',
     cols: 2,
   },
   {
     img: '/SmotheredSteakSpecial.jpg',
-    title: 'Hats',
+    title: 'Smothered Steak Special',
     cols: 2,
   },
   {
     img: '/MeatloafSpecial.jpg',
-    title: 'Honey',
+    title: 'MeatLoaf special',
     author: '@arwinneil',
     rows: 2,
     cols: 2,
   },
   {
     img: '/TurkeySpecial.jpg',
-    title: 'Basketball',
+    title: 'Turkey Special',
   },
   {
     img: '/SalisburySteakSpecial.jpg',
-    title: 'Fern',
+    title: 'Salisbury Steak Special togo',
   },
   {
     img: '/LargeChickenFriedChicken.jpg',
-    title: 'CFC Large',
+    title: 'Chicken fried chicken with mashed potatoes',
     rows: 2,
     cols: 2,
   },
   {
     img: '/TacoSalad.jpg',
-    title: 'Tomato basil',
+    title: 'Beef taco salad special',
   },
   {
     img: '/StrawberryMimosa.jpg',
-    title: 'Sea star',
+    title: 'Special Strawberry Mimosa',
   },
   {
     img: 'TogoCFS.jpg',
-    title: 'Bike',
+    title: 'Chicken Fried Steak, Mashed Potatoes, and Green Beans togo',
     cols: 2,
   },
 ];

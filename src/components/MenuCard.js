@@ -3,7 +3,6 @@ import Typography from "@mui/material/Typography";
 import { useState, useEffect } from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
-// import { shadows } from "@mui/system";
 
 export default function MenuCard(props) {
   const [menu, setMenu] = useState([]);

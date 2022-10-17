@@ -15,7 +15,6 @@ export default function Login(props) {
 
   const handleSubmit = () => {
     try {
-      console.log("CLICKED");
       fetch("https://capstone-project-gilt-three.vercel.app/login", {
         method: "POST",
         body: JSON.stringify(login),
@@ -25,10 +24,6 @@ export default function Login(props) {
       })
         .then((res) => res.json())
         .then((response) => {
-          console.log("TYPE OF", typeof response);
-          console.log("LOGIN RESPONSE", response);
-          console.log("TOKEN RESPONSE", response.token);
-          console.log("RESPONSE MSG", response.msg);
           if (response.msg === "Login successful") {
             document.cookie = cookie.serialize("loggedIn", "true", {
               maxAge: 7200,
@@ -52,7 +47,6 @@ export default function Login(props) {
   };
 
   useEffect(() => {
-    console.log("LOGIN PAGE");
     cookies["loggedIn"] && navigate("/admin");
   });
 

@@ -2,16 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { debounce } from "../utilities/helpers";
-// import { Burger } from "./Burger/Burger";
-// import { Menu } from "./Menu/Menu";
 import HamburgerMenu from "./HamburgerMenu";
 import cookie from "cookie";
-// import CustomHamburgerMenu from "./CustomHamburgerMenu";
+
 
 const CustomNavigation = () => {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
-  // const node = useRef();
 
   const handleScroll = debounce(() => {
     // find current scroll position
@@ -58,7 +55,6 @@ const CustomNavigation = () => {
           className="nav-logo"
           style={{
             paddingTop: 6,
-            // borderRadius: "50%",
           }}
         />
       </Link>
@@ -117,19 +113,9 @@ const CustomNavigation = () => {
         )}
       </ul>
       <div id="navbar-right">
-        {/* <div className="nav-header">
-          <h2>
-            <Link style={{ color: "white", fontSize: 22 }} to="/">Hill Country Cupboard</Link>
-          </h2>{" "}
-        </div> */}
         <div className="hamburger-div">
           <HamburgerMenu />
         </div>
-        {/* <CustomHamburgerMenu /> */}
-        {/* <div className="burger-icon-and-menu" ref={node}>
-          <Burger />
-          <Menu />
-        </div> */}
       </div>
     </div>
   );

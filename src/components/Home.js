@@ -28,7 +28,7 @@ export default function Home() {
       <div className="top-home-image">
         <img
           src="/18813285_1572998952725051_6362616169085327159_n-copy.jpg"
-          alt="Hill Country Cupboard logo"
+          alt="Hill Country Cupboard building in black and white"
           style={{ width: "100%", height: "100%" }}
         />
       </div>
@@ -40,11 +40,14 @@ export default function Home() {
         <div className="top-food-image">
           <img
             src="/Chickenfriedsteakandeggs-copy.jpg"
-            alt="Hill Country Cupboard logo"
+            alt="Chicken fried steak and eggs"
             style={{ width: "100%", height: "100%" }}
           />
         </div>
-        <div className="home-about-bar">
+        <div
+          alt="Background image of catfish special"
+          className="home-about-bar"
+        >
           <div className="about-bar">
             <h2 style={{ color: "black" }}>About Us</h2>
             <p style={{ color: "black" }}>
@@ -57,16 +60,22 @@ export default function Home() {
         <div className="desktop-bottom-image">
           <img
             src="/1101_509503759074581_1484176182_n.jpg"
-            alt="Hill Country Cupboard logo"
+            alt="Hill Country Cupboard building view with yellow and red flowers"
             style={{ width: "100%", height: "100%" }}
           />
         </div>
-        <div className="home-about-bar">
+        <div
+          alt="Background image of catfish special"
+          className="home-about-bar"
+        >
           <div className="about-bar bottom-about-bar">
             <h2 style={{ color: "black" }}>Specials</h2>
             <p style={{ color: "black" }}>
-              Call <a style={{ color: "black" }} href="tel: 830-868-4625">(830-868-4625)</a>or ask your
-              server for the daily specials!
+              Call{" "}
+              <a style={{ color: "black" }} href="tel: 830-868-4625">
+                (830-868-4625)
+              </a>
+              or ask your server for the daily specials!
             </p>
           </div>{" "}
         </div>

@@ -28,8 +28,6 @@ export default function EditMenuForm(props) {
         },
       }
     ).then((res) => {
-      console.log("EDIT RESPONSE", res);
-      console.log("STATUS RESPONSE", typeof res.status);
       if (res.status >= 200 && res.status <= 299) {
         setSuccess(true);
         return res.json();

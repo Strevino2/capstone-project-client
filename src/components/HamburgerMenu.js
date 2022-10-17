@@ -11,7 +11,6 @@ export default function HamburgerMenu() {
 
   const open = Boolean(anchorEl);
   const handleClick = (event, idx) => {
-    console.log(idx);
     setAnchorEl(event.currentTarget);
   };
   const handleClose = () => {
@@ -30,7 +29,6 @@ export default function HamburgerMenu() {
       <IconButton
         size="large"
         edge="start"
-        // fontSize="4em"
         color="inherit"
         className="menu-button"
         aria-label="menu"

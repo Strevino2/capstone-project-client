@@ -46,7 +46,6 @@ export const AddMenuForm = () => {
   };
 
   const handleSubmit = () => {
-    console.log(state);
     fetch("https://capstone-project-gilt-three.vercel.app/menu", {
       method: "POST",
       body: JSON.stringify(state),
@@ -73,7 +72,6 @@ export const AddMenuForm = () => {
             type="text"
             name="menu_type"
             id="edit-form"
-            // value={initialFormState.menu_type}
             variant="standard"
             sx={{ border: "1", borderBottom: "1px solid lightgrey;" }}
             placeholder="Menu type"
@@ -90,7 +88,6 @@ export const AddMenuForm = () => {
             type="text"
             name="menu_name"
             id="edit-form"
-            // value={initialFormState.menu_name}
             variant="standard"
             sx={{ border: "1", borderBottom: "1px solid lightgrey;" }}
             placeholder="Menu name"
@@ -106,7 +103,6 @@ export const AddMenuForm = () => {
           <TextField
             type="text"
             name="menu_price"
-            // value={initialFormState.menu_price}
             id="edit-form"
             variant="standard"
             sx={{ border: "1", borderBottom: "1px solid lightgrey;" }}
@@ -123,7 +119,6 @@ export const AddMenuForm = () => {
           <TextField
             type="text"
             name="menu_description"
-            // value={initialFormState.menu_description}
             id="edit-form"
             variant="standard"
             sx={{ border: "1", borderBottom: "1px solid lightgrey;" }}
@@ -146,13 +141,6 @@ export const AddMenuForm = () => {
         >
           Add
         </Button>
-        {/* <Button
-          sx={{ width: "100%", color: "black", background: "lightgrey" }}
-          variant="solid"
-          onClick={handleClear}
-        >
-          Clear
-        </Button> */}
       </Box>{" "}
     </div>
   );
