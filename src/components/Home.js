@@ -109,7 +109,7 @@ export default function Home() {
           <p>MON,TUE,WED,THUR</p>
           <p>7:00AM - 3:00PM</p>
           <p>FRI, SAT, SUN</p>
-          <p>7:00AM - 5:00PM</p>
+          <p>7:00AM - 4:00PM</p>
         </div>
       </div>
     </div>
